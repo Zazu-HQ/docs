@@ -1,0 +1,241 @@
+---
+title: "The Infrastructure"
+sidebarTitle: "The Infrastructure"
+---
+
+import Newsletter from '/snippets/newsletter.mdx'
+
+<img
+  className=""
+  src="/images/under-contruction.webp"
+  alt=""
+/>
+
+## Intro
+
+If the world's best cold email is sent but it never reaches the recipient's primary inbox, the email is worthless. Infrastructure is a prerequisite for good outbound: you might be able to succeed with mediocre emails and great infrastructure, but you will never succeed with great emails if your infrastructure doesn't work.
+
+The tragic part is that most outbound campaigns fail right here. Most people don't want to put in the work to figure it out. And their campaigns fail. That in mind, this chapter will prepare you to run cold outbound campaigns. The next chapters will teach you how to write and send emails.
+
+I have spent 1000s of hours looking into this stuff. Some of the below may be easily findable online, yet not very well organized. And other parts of this information are insights I only learned after months of sending millions of emails for our clients. The below is a practical step-by-step to setting up the infrastructure so that you can focus on writing, and sending, winning emails.
+
+## What we'll cover in this chapter?
+
+The whole point of this chapter is making sure your emails hit the right inboxes. This work often seems scary, but it shouldn’t. Everything we’ll cover here is in one of the following categories:
+
+<Steps>
+<Step>
+Buying and setting up adjacent domains.
+</Step>
+<Step>
+Optimizing your domains for deliverability.
+</Step>
+<Step>
+Setting up email inboxes on your domains.
+</Step>
+<Step>
+Optimizing your inboxes for deliverability.
+</Step>
+</Steps>
+
+
+## What if you skipped all the infrastructure work?
+
+It’s tempting. If you decide to forego everything on this page and get straight to writing and sending emails, then your sending infrastructure will look something like this: one email account, from your main domain, sending to all of the people you want to send to. This could scale linearly with however many SDRs or marketing people you have on your team.
+
+<img
+  className=""
+  src="/images/one-to-many.png"
+  alt="one email account sending to a huge number of people"
+/>
+
+But unless you only want to send a few emails per day (and even then, this is not optimal), this is a horrible idea that will—in a matter of days—likely get your emails sent to spam and perhaps even penalize your company’s entire domain. Sending hundreds of cold outbound emails from individual inboxes, or even individual domains, is a clear red flag.
+
+And yet this one account per person tactic is what most companies, and the SDRs that work for them, are doing. Millions of SDRs worldwide wake up, write a few dozen emails, and clock out for the evening. It works, but it’s not efficient and it’s not what this playbook is going to help you do. When you are done reading this, you will know how a single person can send with the volume and personalization of an army. Without setting up the infrastructure, one person can send just 20 or 30 great emails a day—we want to send 2,000.
+
+So why doesn’t it work to run your cold outbound like the diagram above?
+
+1. Email Service Providers (ESPs), like Gmail, want to see human-like volume being sent from email accounts. And most humans do not send hundreds or thousands of emails per day.
+‍
+2. If you get flagged for spam, your entire domain could get penalized—which means you shouldn’t ever be sending cold outbound from your company’s actual domain. You shouldn’t be sending outbound from just one domain in general.
+‍
+3. Your emails are at risk of getting sent to spam if you haven’t set up your SPF, DMARC, and DKIM records for the domains you’re sending from.
+
+Deliverability is also an issue at the email level—you can’t have spammy emails—but we’ll cover that in the last chapter of this playbook, which is all about how to scale.
+
+## Buying domains and setting them up for deliverability
+
+In order to send at any reasonable scale, you need to buy what I call **adjacent domains**: domains that are similar to your company's. In the case of my company, Aurora, our actual domain is helloaurora.com—but adjacent domains might be:
+
+auroraemails.com
+
+yesaurora.com
+
+withaurora.com
+
+getaurora.com
+
+And so on.
+
+Why not just any domain? Because all the recipients of your emails will see your domain name in your sender email address, and there will be a lot of eyebrow-raising if you picked something that seems suspicious (e.g. buying floridapanthershockey.com if your business is gardeningtools.com).
+
+Use .com domains. Everything else (.io, .net, etc.) typically sees lower deliverability rates and trust scores. For more on picking the best domains for cold email, [read here](https://www.za-zu.com/blog/cold-email-domains-guide).
+
+Once you buy the domains, you should 301 redirect them to your main domain. For example, if I bought withaurora.com, I’d redirect it to helloaurora.com, our actual doEverything else (.io, .net, etc.) typically sees lower deliverability rates and trust scores.main. You do this so that if someone who sees your email decides to copy and paste your domain into their browser (this is common), they hit your real website. You’d be surprised by how few people are surprised when domains redirect this way, or even notice it. It’s less of a problem than you probably think.
+
+### How many adjacent domains should you buy?
+The number of adjacent domains you should buy depends on how much email volume you want to send. At Aurora, we set up 3 inboxes per domain and send 20 cold emails per inbox per day, which is about what a normal human sales rep would send. If you already know how much outbound you want to send, you can use a simple formula:
+
+<Note> Adjacent Domains = (Desired Daily Volume / 60) x 1.1 </Note>
+
+The “1.1” exists in the formula to make sure you buy some reserve domains; in other words, domains that you don’t strictly need and will not use immediately. These domains exist for those situations when some of the domains you are actively using in a campaign start to experience deliverability problems—which happens from time to time. We’ll cover this in more detail in the final section of this playbook about scaling your campaigns.
+
+If you want to send 60 or fewer emails per day, you may just need one domain to get started. If you want to send 6,000, you should buy 110 domains. This is not a hard rule, but it’s a good heuristic you can use to get started. Your experience while sending may vary, and you might change your mind down the road. But it has worked for us at Aurora.
+
+***There is a separate question here:*** *How much daily volume will I send? We'll cover that later, when we talk about who to email and how many emails to send them. If you have a small TAM (imagine there are only 5,000 people who could be your customers), then you likely won't need many domains. But if there are tens or hundreds of thousands of people that you could possibly email, you'll need a lot. At Aurora, we buy ~20 domains for each client. What you should know for now is that it's better to buy too many domains than too few. Nothing will happen if you buy too many, but buying too few and over-sending on them could get you penalized for spam.*
+
+Buying domains is easy and you can do it just about anywhere: GoDaddy, Siteground, Bluehost, and more—there are 100s of places you can buy domains. At Aurora we use Cloudflare, but it doesn’t make much of a difference. Just make sure that wherever you buy your domain lets you get into the admin settings, which you’ll need so you can optimize for deliverability.
+
+### Optimizing your domains for deliverability
+
+There’s so much effort put into optimizing inboxes and emails for deliverability—you may have heard terms like ‘warming up’ inboxes, avoiding ‘spam words’, and the like. But it would be a mistake to jump to those things without first optimizing deliverability at a domain level.
+
+**What ‘deliverability’ means**: in outbound, deliverability means getting your emails to hit your recipient’s primary inbox, where they will actually see your email. We are not talking about whether your email gets “delivered”, a metric you’ll see on many email-sending products, which just means that the email landed somewhere—which could be spam. The following steps are about optimizing so that your outbound hits the part of the inbox that people actually read.
+
+Handling deliverability at the domain level is mostly about boosting your authenticity in the eyes of ESPs, like Gmail. Fortunately, this is fairly easy. Roll up your sleeves and you can get most of this done in an hour or so. At the domain level, you need to set up three main things:
+
+- **SPF**
+- **DMARC**
+- **DKIM**
+
+These three acronyms, while they look rather scary, are easy to set up and provide some of the basic foundations for work we'll do later. [Here is how to set up each.](https://www.za-zu.com/blog/domain-set-up)
+
+<Info>You may have also heard of the concept of ‘domain warming’, which refers to increasing your domain’s reputation in the eyes of ESPs. This is not something you really have to do on its own. Warming up your domain is mostly a downstream effect of 1. The authentication steps in this section, 2. The inbox warming in the next section, and 3. The actual performance (and non-spamminess) of your emails and campaigns, which we’ll cover later on.</Info>
+
+## Creating email inboxes and optimizing them for deliverability
+
+Inbox-level deliverability optimization is the highest-leverage deliverability work there is.
+
+Sure, ESPs like Google care about your domain and the contents of your email. But what they care about most is the individual sender—are *you* a trustworthy person?
+
+As you might expect, this is also the trickiest part of deliverability optimization. But even though some of the next steps are tricky, they should take you no more than ~10 hours to implement, even if you have lots of email inboxes. It begins, of course, with actually setting up your email inboxes.
+
+### Setting up your email inboxes
+At Aurora, we set up 3 inboxes per domain. You could set up more—it’s the temptation, because setting up lots of domains takes work—but we don’t do this at Aurora. That’s because the more you send from each domain, the more spam reports there are per domain. More spam reports on a domain increases the chance that the entire domain crosses a spam threshold and gets a bad reputation for being spammy. To reduce risk, diversify sending across more domains.
+
+You have 3 main options for setting up inboxes:
+
+- **Google**: This involves setting up Gmail accounts with Google Workspace.
+- **Microsoft**: This involves setting up Outlook accounts with Microsoft 365.
+- **Private IP**: This involves setting up your own private email server infrastructure.
+
+There are other options. But these are the main 3. And if you want to avoid headaches, I’d recommend 1. Google and 2. Microsoft. You can mix and match if you want, with some domains on Google and some on Microsoft. But what I’d especially recommend against is using a private IP.
+
+**Why no private IP?** Whether you do this in-house (extremely complex) or use a service like Maildoso (less complex), veering away from traditional ESPs is playing a losing game. As for why, imagine two outbound campaigns: one is a batch of 100 emails from trusted Gmail and Outlook accounts, and the other is a batch of 100 emails being sent from a little-known ESP network. Which one do you think is more likely to get sent to spam? It’s also true that lots of the people who use private IPs are scammers—they’ve been blocked by companies like Google—which earns private IPs a deservedly bad reputation. As a result, sending mass cold outbound on a little-known ESP network tends to be a straight shot to the spam folder.
+
+<Tip> If you set up with Google, which I recommend, you’ll be setting up the emails via a Google Workspace account. You can set up multiple domains on a Google Workspace account, which means there may be a temptation to set up all of your domains and inboxes on the same workspace account. Don’t do this. A good rule of thumb is 3 inboxes per domain, and 2 domains (so 5 or 6 inboxes) per Google Workspace account. The reason why is that, if some of your inboxes or domains on a Google Workspace account get flagged as spam, you could lose the whole account. </Tip>
+
+The practical step-by-step of setting up the inboxes is straightforward—we won't get into a step-by-step tutorial of that here, as there are plenty of good ones online ([like Google's own site](https://support.google.com/a/answer/6365252?product_name=UnuFlow&hl=en&visit_id=638579311059382104-2675909081&rd=1&src=supportwidget0&hl=en)). Or you could ask AI. What's important to mention here, however, is that you be careful about which IP addresses and browsers you are managing accounts from.
+
+ESPs, like Google, don’t want one person to be managing hundreds of email accounts. And if you simply open your browser and spend a few hours setting up hundreds of inboxes on many dozens of domains, ESPs will flag that and start to making things harder for you: they might ask you for a phone number, then limit how many times you can use that phone number. They may ask you to verify your identity with a text message. Or they may simply not let you continue to create inboxes and add accounts.
+
+How do you get around this so you can set up as many accounts as you want? Two ways:
+
+<Steps>
+<Step title="VPNs">
+When you set up email accounts, use a VPN and change it regularly. Use high quality American IPs. This makes it harder for ESPs to know that it’s just one individual setting up the accounts.
+</Step>
+<Step title="Antidetect browsers">
+There are browsers, like [Adspower](https://adspower.com/) and [Wavebox](https://wavebox.io/), that take extra steps to conceal your fingerprint (digital identity) from websites. This makes it harder for Google to start placing limits on how many accounts you can manage from your browser.
+</Step>
+</Steps>
+
+
+Use these. Then set up your inboxes with the names of real humans that work on your team. At Aurora, we found it’s usually most effective to use the names of the founders or other people that can open doors at the company (e.g. your Head of [Department] type roles). Prospects often respond better to this than getting an email from a low-level salesperson. It’s fine if the low-level salesperson is managing outbound on behalf of the founder, but I find it’s effective to use the name of people who are higher up. This isn’t one-size-fits-all advice, though—think about what makes sense for your company. And, yes, use profile pictures!
+
+Once your inboxes are set up, you’re ready to start warming.
+
+### Warming your email inboxes
+
+You could start sending outbound as soon as your inboxes are ready. But you shouldn't.
+
+Sending outbound en masse immediately may get you sent to spam.
+
+Instead, you should do something called 'warming.
+
+*What warming means:* To warm email inboxes, you send emails from your accounts to other email accounts that agree to engage positively: opening emails, marking them as important, replying on occasion, and marking the emails as 'not spam' if they ever hit spam. The goal of warming is to create a profile of activity for your inboxes that matches what a normal good email inbox would look like. Think of a manager at a company whose emails are always opened, often replied to, and often marked as important—that's the activity we want.
+
+Warming is different from simply scaling up the volume of emails you send. You'll want to do that, too (sending 100 emails on Day 1 is not a great idea, but it's also imporant that the emails you're sending are being reacted to in positive ways.
+
+Why does it matter? You can think of the way an ESP (like Google) views your inbox as the way you might view a friend you made last weekend compared with a lifelong best friend. When you just meet someone, your guard is up. It takes time for them to gain your confidence and trust.
+
+Right now, your inbox and ESPs like Google and Microsoft are new friends.
+
+If you started sending 100s of cold outbound emails from the jump, you’d be sending out clear red flags that you aren’t a human, you’re actually a bot spamming messages. And you’d get sent to spam. Three main reasons for this:
+
+1. You’re sending too much volume (humans don’t send 100s of emails a day).
+2. You’re sending the same templated message to a bunch of people.
+3. The engagement rate (replies, opens, etc.) on your email is lower than average.
+
+Your activity ends up looking like this as a result:
+
+<img
+  className=""
+  src="/images/what-esps-want-to-see.png"
+  alt="Two side-by-side diagrams compare how email activity is perceived. On the left: “What ESPs want to see” shows one email going to one person—simple, human behavior. On the right: “What your emails probably look like” shows one email sent to many prospects at once, in a spammy, automated-looking pattern. This illustrates why sending mass outbound emails too quickly triggers spam filters.
+"
+/>
+
+So before you send a single piece of cold outbound, you’ll want to make your domains look like real, normal people. You want to make lifelong friends with the big ESPs. Here’s how.
+
+#### The right way to warm your inboxes
+
+
+If you’ve ever researched email warming, you’ve likely seen 100s of different “warming tools” out there that claim you just give them access to their email and they warm your account.
+
+These tools generally work by managing lots (100,000s) of email accounts, sending emails from your inboxes to those accounts, and manufacturing engagement that replicates what a normal human email account might look like.
+
+You could do that on your own, but as you might be able to guess, warming is exceedingly difficult to do on your own. Most warming tools—including our warming feature at Za-zu—have invested tens or hundreds of thousands of dollars into the infrastructure they use. If you want to start sending cold outbound reliably and quickly, you’ll want to use a warming tool.
+
+My strongest piece of advice as you choose a tool is to **warm from the same IP you are going to send outbound from**. This makes most warming tools a problem, because if you use a standalone warming tool and then use a separate email sequencer, you'll be warming your inboxes from a different IP address than you’ll be sending outbound from.
+
+ESPs aren’t stupid, and if they guess what you’re doing, your cold outbound campaigns are likely to suffer. Za-zu fixes this for you—our product is an email sequencer with built-in warming, so you can warm from the same IP you send from. [Learn more here](https://www.za-zu.com/).
+
+Not all warming tools have the same kind of functionality, either. A few things you should look for as you think about how you’re going to warm emails:
+
+- **Warming pool quality**: Many cheap warming pools (and tools that use them) have spam traps in them, placed by ESPs. These are inboxes that only exist in the warming pool—meaning that if you email them, ESPs know what you’re doing and will send you to spam as a result. The quality of the recipients in the warming pool matters, too. Getting replies from trusted inboxes is extra helpful in the same way that a recommendation from a good friend is better than one from a stranger.
+‍
+- **Warming email frequency**: At Za-zu, we slowly ramp up a new inbox, slow down when cold outbound starts, then try to keep engagement rates steady. This is what a good warming tool should do, but not all of the options out there actually do this.
+‍
+- **Warming email copy**: A lot of warming tools will send generic emails, like “Office party at 6pm?”, which is fine on its face but a problem if the cold outbound you’re sending is selling a payroll solution to startups. The emails you use for warming should have similar copy and topics to the emails you’ll use in your cold outbound campaigns. ESPs should not be able to tell the difference between your warming emails and your cold emails.
+‍
+- **Randomization**: Part of good inbox warming means randomizing engagement—you don’t want the exact same response from every email you send to, and you don’t want your reply rate to stay the exact same forever. Real-life is more complicated than that, so good warming involves randomizing within some boundaries to replicate what a normal account would do.
+
+Find a tool that can do all of these things for you. At Za-zu, for example, we use AI to make sure there are no spam traps in the warming pools (and offer a private pool for larger customers). We also write warming emails based off of copy in current and drafted campaigns—so ESPs don’t raise eyebrows when you start sending.
+
+<Note>The rest of this warming section will range from “interesting” to “extremely useful” based on how you’re warming your emails. If you’re using a tool like Za-zu that effectively does everything for you, the following is good to know but not directly actionable—we’ll handle it. If you’re using a warming tool that requires more manual work (or you’re attempting to do this yourself) then the following includes information directly applicable to what you’re working on right now. </Note>
+
+If you aren’t interested in learning more of the workings of email warming, [skip to the next section](/writing-great-emails) where we cover evidence-backed methods for writing a great cold email.
+
+#### Email warming best practices (before you start sending outbound)
+The most intensive part of warming comes before you’ve sent anything. You want to go from “here’s this person who just opened an account” to “this is a trusted sender who sends good emails to other trusted senders”. Each ESP has their own profile on you, so it’s in this initial warming phase that you’ll want to build a good reputation with at least Google and Microsoft.
+
+One common approach is to start warming an inbox by sending the maximum daily volume you’d want to see from a normal email (20 emails). At Za-zu, we instead start by slowly ramping the inbox up to that 20-email volume over the course of a couple of weeks. When employees start at a new company—the primary reason for a new Google Workspace account—they’re typically onboarding, learning the ropes, getting to know people. They are likely to send less emails on Day 1 than Day 3, and less emails on Day 3 than Day 7. We replicate that.
+
+After you’ve been warming for at least 3 to 4 weeks, you’re ready to start sending.
+
+#### Email warming best practices (after you’ve started sending outbound)
+One failure mode in cold email is to turn off your warming as soon as you start sending cold outbound: this is what happens a lot when people use external tools, decide they’ve “finished warming”, and start sending their campaigns.
+
+But a loaf fresh out of the oven doesn’t stay warm forever, and neither do your emails. You don’t want to completely turn off your warming work once you’ve started sending cold outbound, but you do want to be flexible about it: your goal is to maintain high-quality engagement statistics without harming your ability to send the volume of outbound you want to send.
+
+If your cold outbound campaign goes well and gets lots of replies, you may not need to do much warming—maybe just a few emails per day, or per week. But if your cold outbound campaign tanks and your engagement rates along with it, you’ll want to dial back on the outbound and dial up on the warming to make sure you don’t send any red flags to ESPs. Generally you also want to have warmed inboxes that you’re not using for cold outbound, so that if one inbox tanks you can quickly swap it for a warmed one without sacrificing on volume.
+
+This is all hard, technical, thorough work, and managing it at scale would be nearly impossible manually without a team of people dedicated to the task. That’s why we decided to automate it when building Za-zu, so you can focus on what matters—writing emails and making sales.
+
+Speaking of writing emails…
+
+## Enjoying this playbook so far?
+Just write your email in the box below to sign up to our newsletter. You'll get an email every time we publish a new piece. No spam, just cold email tactics.
+
+<Newsletter />
