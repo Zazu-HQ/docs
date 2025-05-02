@@ -1,5 +1,4 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
   "name": "Za-zu API Documentation",
   "logo": {
     "dark": "/logo/dark.svg",
@@ -7,12 +6,32 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#085ED6",
+    "light": "#5DE708",
+    "dark": "#085ED6",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#085ED6",
+      "to": "#5DE708"
+    }
+  },
+  "fonts": {
+    "heading": {
+      "family": "Geist Sans",
+      "weight": 700,
+      "source": "https://cdn.jsdelivr.net/npm/geist@1.4.1/fonts/geist-sans/Geist-Bold.woff2",
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Geist Sans",
+      "weight": 400,
+      "source": "https://cdn.jsdelivr.net/npm/geist@1.4.1/fonts/geist-sans/Geist-Regular.woff2",
+      "format": "woff2"
+    },
+    "mono": {
+      "family": "Geist Mono",
+      "weight": 400,
+      "source": "https://cdn.jsdelivr.net/npm/geist@1.4.1/fonts/geist-mono/GeistMono-Regular.woff2",
+      "format": "woff2"
     }
   },
   "topbarLinks": [
@@ -90,8 +109,8 @@
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/zazugtm",
+    "github": "https://github.com/zazugtm",
+    "linkedin": "https://www.linkedin.com/company/za-zu"
   }
 }
