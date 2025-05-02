@@ -50,10 +50,10 @@
   ],
   "navigation": [
     {
-      "group": "The Cold Outbound Handbook",
+      "group": "Get Started",
       "pages": [
-        "Intro",
-        "Why Cold Outbound Works",
+        "introduction",
+        "quickstart",
         "development"
       ]
     },
