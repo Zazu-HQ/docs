@@ -1,0 +1,94 @@
+---
+title: "Sending Personalized Outbound at Scale"
+sidebarTitle: "Personalizing at Scale"
+---
+
+<img
+  className=""
+  src="/images/farm.webp"
+  alt=""
+/>
+
+## Intro
+
+It used to be that if you wanted to send someone a valuable email that was personalized just for them, you had to write that email manually. Most sales reps today are still doing this: find a prospect, research them, spend a real chunk of time writing a personalized email for them. This was the greatest bottleneck to automating effective cold outbound.
+
+Recent developments in AI, however, make it finally possible to do prospect research and email personalization, at any scale. That's what this chapter is all about. You've learned how to prepare to send outbound, you've learned how to warm your domains and your inboxes, and you've learned how to craft a winning email—now it's time to automate it all and start sending.
+
+### What we'll cover in this chapter
+
+<Steps>
+<Step>How to use AI to personalize cold emails.</Step> 
+<Step>How to structure your cold outbound campaigns.</Step>
+<Step>Best practices for sending at scale (without hitting spam).</Step>
+</Steps>
+
+It's at this stage you will want to consider how you will want to send your emails, personalize them with AI, and monitor your campaigns. The rest of this chapter will assume that you have a way to do so. There are a number of email sequencers out there today that you can use, most of which will require varying degrees of tinkering to get them to work in a useful way.
+
+Or you could try the product I have been building over the last year: Za-zu. It's the email sequencer built for personalized outbound at scale, and it can do everything from warming your accounts to implementing all of the smart AI tactics we'll discuss below. [See the product here](https://za-zu.com).
+
+Enough self-promotion—let's talk tactics.
+
+## How to write cold emails that AI can personalize
+If you read the previous chapter on writing emails, you know the ingredients for an effective cold email. If you've practiced, you can probably write a good cold email right now. And so arises the question that's been the bottleneck to good outbound at scale:
+
+**How do I automate emails at the quality I could write manually?**
+
+The key isn't to have AI write emails on its own—the AI tools we have today are terrible at that. **Instead, hand AI great emails and have it fill in the personalizable blanks.** The way we write at my agency, Aurora, is like this:
+
+- Write a dream email to one person. Forget about AI. Imagine it's 1:1.
+- Train AI to send that dream email at scale by filling in the personalized pieces of info.
+
+This may sound a touch confusing or vague, so let's walk through the steps.
+
+###Step 1: Writing a dream email
+Imagine that I'm running a campaign to sell Za-zu to companies who raised in the past 6 months and have open sales jobs posted on their site. You run a seed-stage AI customer support startup called Hypothetical Company that fits the criteria.
+
+Here's a completely hypothetical 1:1 email I could write to you.
+
+>Hey, Reader —
+>
+>Congrats on the recent raise (Lachy Groom also funded a previous company of mine, was generally helpful).
+>
+>Happy to see that Hypothetical Company looks a bit different from all the generic/gimmicky AI support startups out there.
+>
+>Looked at your job board and noticed you're hiring for sales. Imagine you're planning to use outbound to gain significant early/high ROI traction?
+>
+> If so - you should check out Za-zu, my company. It's an email sequencer that lets one smart growth person send personalized outbound at the scale of 50 SDRs.
+>
+>I'd love to show you the product. Would it be crazy to chat this week?
+>
+>Matt
+
+This is the kind of email that previously would have been impossible to automate at scale. Now it's possible, and here's how you might go about doing it.
+
+###Step 2: Converting the dream email to an AI-usable template
+Now I want to take that email and replicate it at scale with AI. Here's how I'd go about doing it.
+
+>Hey, {"{{first_name}}"} —
+>
+>{"Congrats on the recent raise {% if {{investor_name}} %} ({{investor_name}} also funded a previous company of mine, was generally helpful. endif %}."}
+>
+>Happy to see that {"{{company_name}}"} looks a bit different from all the generic/gimmicky {"{{startup_category}}"} startups out there.
+>
+>Looked at your job board and noticed you're hiring for sales. Imagine you're planning to use outbound to gain significant early/high ROI traction?
+>
+>If so - you should check out Za-zu, my company. It's an email sequencer that lets one smart growth person send personalized outbound at the scale of 50 SDRs.
+>
+>I'd love to show you the product. Would it be crazy to chat this week?
+>
+>Matt
+
+There are various levels of complexity at work in this email—let's look at each.
+
+- **Campaign level**: The email is personalized by default based on how we've chosen who to email (companies that have recently raised and have open sales jobs). That means some of the template is still personalized, even though AI isn't touching it.
+
+- **Copy and paste**: The {"{{first_name}}"} variable in this email is the simplest one—you just need the AI to paste the name of the prospect.
+
+- **Summarization and normalization**: The {"{{company_name}}"} {"{{startup_category}}"} variables go beyond the simple copy and paste. The company name, for example, needs to be normalized—if a company's name is Hypothetical Company Industries, Inc., pasting that entire thing in an email will feel inhuman. So the AI shortens it to 'Hypothetical Company'. And {"{{startup_category}}"} needs to be a human-sounding summary of the specific niche or industry that the prospect's company is in.
+
+- **If-then:** The investor line at the beginning of the email feels tricky, but it isn't. You just need to ask AI to cross-reference the list of the prospect's investors with your own lists of previous investors (relevant in this case, since I have them). If there's an investor in common, the line will be included—if not, it will be cut.
+
+AI personalization can, of course, go as far as you want it to. It can write entire sentences or paragraphs based on the instructions you give it. At Aurora, for example, one campaign for a podcasting agency that found success included a bullet-point section where AI offered personalized podcast ideas for the prospects. Always write your dream email first, then figure out how to replicate that email with AI at scale second.
+
+You can get carried away here, of course. The more complexity you give AI, and the more words it has to write, the higher the probability that you will plant a red flag—that the email will have a non-human smell to it. Be careful about how you use AI and test it before launching a campaign.
