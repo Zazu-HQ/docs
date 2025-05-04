@@ -5,6 +5,9 @@ sidebarTitle: "Personalizing at Scale"
 
 import { VariableNode } from '/snippets/VariableNode.mdx'
 import { IfNode } from '/snippets/IfNode.mdx'
+import { VariableSelect } from '/snippets/VariableSelect.mdx'
+import { Comparison } from '/snippets/Comparison.mdx'
+import { ThenNode } from '/snippets/ThenNode.mdx'
 
 <img
   className=""
@@ -70,7 +73,7 @@ Now I want to take that email and replicate it at scale with AI. Here's how I'd 
 
 >Hey, <VariableNode>first_name</VariableNode> —
 >
->Congrats on the recent raise <IfNode></IfNode> investor_list contains "YC" THEN (<VariableNode>investor_name</VariableNode> also funded a previous company of mine, was generally helpful. ELSE ENDIF
+>Congrats on the recent raise <IfNode></IfNode><VariableSelect>investor_list</VariableSelect><Comparison>contains</Comparison><Comparison>YC</Comparison><ThenNode></ThenNode> (<VariableNode>investor_name</VariableNode> also funded a previous company of mine, was generally helpful. ELSE ENDIF
 >
 >Happy to see that <VariableNode>company_name</VariableNode> looks a bit different from all the generic/gimmicky <VariableNode>startup_category</VariableNode> startups out there.
 >
