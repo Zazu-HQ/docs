@@ -173,3 +173,93 @@ This is a persona we have used in 100,000s of emails at Aurora. It works. Write 
 
 ### Choosing the right examples
 
+LLMs like ChatGPT are extremely good word predictors. At a basic level, they look at what has been written so far and guess as to which word comes next. This is why giving LLMs positive examples of the output you are looking for is so high-leverage—you’re creating a new, small, powerful dataset for the AI to model its answers on.
+
+Examples tend to work best when you give the AI both an input and an output. Show AI an example of the input they’ll receive, then show it an example of what a positive output would look like. Here’s an example for coming up with the niche of a business:
+
+- Input: "Neighbor revolutionizes storage by linking people with extra space to those needing storage, offering a cost-effective alternative to traditional self-storage. Homeowners earn additional income by renting out spaces like garages or basements, while renters enjoy flexible, affordable options. With demand for storage at an all-time high, Neighbor provides a secure, trustworthy platform that cuts storage costs by half, challenging conventional storage norms and empowering hosts."
+- Output: "peer-to-peer storage"
+
+If you can give more than one good example, do so—it would be difficult to give too many examples. Feel free to test as you’d like, but in my experience you will see diminishing returns as you add additional examples. The difference between 0 and 1 example, or 1 and 3 examples, can be serious. But the difference between 50 and 52 examples is not likely to be noticeable.
+
+## How to craft effective outbound campaigns at scale
+Now arrives the grand finale of everything you have read up to this point: it’s time to create campaigns in your email sequencer, start sending them, and hopefully, to start making money.
+
+You have most of the puzzle pieces by now. You know:
+
+- The principles behind why outbound works.
+- How to prep your infrastructure for deliverability.
+- How to craft a great cold email.
+- How to use AI to personalize your great emails at scale.
+
+There’s still some art and science to getting this right—sending campaigns with the wrong scope can minimize your results, and testing your campaigns improperly or insufficiently can mean you miss out on insights to write better emails.
+
+### Structuring a great outbound campaign
+One of the many downsides of manual, 1:1 email-sending is that you can’t get very clever with the way you structure campaigns. You may have an internal playbook that tells you how long to wait until you follow up, but you usually won’t be rigorously testing different kinds of wording and messaging across ~5 to 10 email variants for each stage of your campaign.
+
+When you send with a good sequencer at scale, you can. At Aurora, our campaign structures typically look something like this.
+
+<img
+  className=""
+  src="/images/campaign-map.png"
+  alt=""
+/>
+
+A quick explainer of this structure:
+
+- **Campaign**: The idea for the series of emails. Usually this is either a specific audience or a combination of both a specific audience and product offering—a modified version of the example above might be, “Cap table management product for pre-Series C startups hiring for sales.”
+
+- **Stages**: Each stage represents one individual email to a prospect. It generally helps to come up with a broad goal, or idea, for each stage.
+
+- **Email variants**: You’ll write different email variants to test different messaging, tone, and email structure within each stage of your campaign.
+
+Every campaign is different, so the number of stages and email variants you want depends on your goal. Typically though, we aim for campaigns to have between 4 and 6 stages, and for between 3 and 6 different email variants per campaign.
+
+If you’re new to this, it may feel slightly overwhelming (or at least different) from how manual outbound works. Once you’ve written a few campaigns, though, you’ll find that this campaign structure is magical—for example, when Variant C in Stage 3 does particularly well and you realize you’ve found a surprisingly great angle for new campaigns.
+
+Your email sequencer should give you in-depth data about each stage and email, so as you send and get results you can start optimizing for even more replies. More on that in a bit.
+
+### What about timing?
+It’s up to you to decide how many days should pass between each email, but we often do something like this:
+
+- Between Stage 1 and 2: **2 days**
+- Between Stage 2 and 3: **4 days**
+- Between Stage 3 and 4: **7 days**
+
+The logic here is simple: if someone doesn’t reply to a couple of emails within the matter of a couple of days, they likely aren’t interested right now, were too busy to reply, or didn’t see the email. In any case, there isn’t much benefit to flooding their inbox—let it rest a week or so, then follow up. If after your third (or fourth, or fifth) email you still haven’t heard back, let it rest even longer and try once more. Often, by the final stage, you’re just letting the prospect know you won’t be emailing them any more in the future.
+
+So, about stages: what are you actually supposed to write?
+
+### Deciding what messages to convey in each email stage
+While manual outbound can often be random, building large-scale campaigns in your email sequencer allows you to be extremely thoughtful about your campaign. As a general rule, each stage in your campaign should have a high-level theme that the emails within the stage follow. For example, here is a hypothetical way to structure themes by stage:
+
+- **Stage 1**: Intro and introduce primary value prop
+- **Stage 2**: Reinforce primary value prop and introduce secondary
+- **Stage 3**: Recap primary and secondary value props
+- **Stage 4**: Break up, ask if someone better to email and say this is your last email
+
+You can get wonderfully creative with every stage, but at a minimum it’s good to have a narrative arc for your campaign. Not only does this lead to more effective campaigns, but if one stage significantly outperforms another one—say your Stage 2 outperforms Stage 1—then you have new insights about what kind of messaging actually resonated with your audience.
+
+<Tip>Some of our clients at Aurora have thought they had their messaging figured out—they’d paid the branding agencies, done the storytelling sessions, etc.—but the value props that resonated in actual outbound campaigns ended up surprising them. The right messaging will change by campaign, audience, and stage. Avoid being overconfident and instead, try a wide range of plausibly effective messaging to see what really works. You may be surprised.</Tip>
+
+Once you’ve decided on the broad strokes of narrative for your campaign and stages, you can start writing the emails. I’ve found that, before writing emails, it helps to outline this entire process—don’t let it live in your head. Write down the audience, write down the goals of the stages, and write down the high-level points that will live in each email. For example…
+
+- **Stage 1**: Intro and introduce primary value prop**
+- **Variant A**: Company mission-based intro + aggressive CTA (short)
+- **Variant B**: Headcount-based intro + soft CTA (short)
+- **Variant C**: Company mission-based intro + aggressive CTA (long)
+- **Variant D**: Headcount-based intro + soft CTA (long)
+- **Variant E**: Super short email with a simple question - nothing more.
+
+You don’t have to outline exactly like this, but it can be helpful to have a general idea of the focus of each email before you write it. These outlines can also help you be more rigorous about what you’re testing. Once you’ve defined the unique traits about each email, it’s easy to look at the email performance data and identify the specific variables that are making your emails succeed.
+
+### Writing the emails themselves
+Most of the email-writing process should be pretty simple—use what you learned in the section of the playbook about writing emails, or go reference it again if you want some help.
+
+There is a unique twist when you’re sending with AI at scale:
+
+**Not every email should read exactly the same.**
+
+ESPs, like Google, don’t like seeing the exact same email being sent to 100s or 1000s of individual people. There are very few real-life situations where that happens—so if it’s the main kind of activity coming from your domain, you’ll raise red flags.
+
+This is where you’ll want to do something called **spintaxing**: randomly changing words in every email so they aren’t identical. Spintaxing works by finding synonyms to specific words or phrases in your email, then providing a few options for your email sequencer to randomly choose when it sends the email. For example, a spintaxed version of an intro line might look like this:
