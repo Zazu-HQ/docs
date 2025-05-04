@@ -8,6 +8,8 @@ import { IfNode } from '/snippets/IfNode.mdx'
 import { VariableSelect } from '/snippets/VariableSelect.mdx'
 import { Comparison } from '/snippets/Comparison.mdx'
 import { ThenNode } from '/snippets/ThenNode.mdx'
+import { ElseNode } from '/snippets/ElseNode.mdx'
+import { EndifNode } from '/snippets/EndifNode.mdx'
 
 <img
   className=""
@@ -73,7 +75,7 @@ Now I want to take that email and replicate it at scale with AI. Here's how I'd 
 
 >Hey, <VariableNode>first_name</VariableNode> —
 >
->Congrats on the recent raise <IfNode></IfNode><VariableSelect>investor_list</VariableSelect><Comparison>contains</Comparison><Comparison>YC</Comparison><ThenNode></ThenNode> (<VariableNode>investor_name</VariableNode> also funded a previous company of mine, was generally helpful. ELSE ENDIF
+>Congrats on the recent raise <IfNode></IfNode><VariableSelect>investor_list</VariableSelect><Comparison>contains</Comparison><Comparison>YC</Comparison><ThenNode></ThenNode> (YC also funded a previous company of mine, was generally helpful. <ElseNode></ElseNode><EndifNode></EndifNode>
 >
 >Happy to see that <VariableNode>company_name</VariableNode> looks a bit different from all the generic/gimmicky <VariableNode>startup_category</VariableNode> startups out there.
 >
