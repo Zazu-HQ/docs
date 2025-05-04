@@ -3,6 +3,9 @@ title: "Sending Personalized Outbound at Scale"
 sidebarTitle: "Personalizing at Scale"
 ---
 
+import { VariableNode } from '/snippets/VariableNode.mdx'
+import { IfNode } from '/snippets/IfNode.mdx'
+
 <img
   className=""
   src="/images/farm.webp"
@@ -41,7 +44,7 @@ The key isn't to have AI write emails on its own—the AI tools we have today ar
 
 This may sound a touch confusing or vague, so let's walk through the steps.
 
-###Step 1: Writing a dream email
+### Step 1: Writing a dream email
 Imagine that I'm running a campaign to sell Za-zu to companies who raised in the past 6 months and have open sales jobs posted on their site. You run a seed-stage AI customer support startup called Hypothetical Company that fits the criteria.
 
 Here's a completely hypothetical 1:1 email I could write to you.
@@ -62,14 +65,14 @@ Here's a completely hypothetical 1:1 email I could write to you.
 
 This is the kind of email that previously would have been impossible to automate at scale. Now it's possible, and here's how you might go about doing it.
 
-###Step 2: Converting the dream email to an AI-usable template
+### Step 2: Converting the dream email to an AI-usable template
 Now I want to take that email and replicate it at scale with AI. Here's how I'd go about doing it.
 
->Hey, {"{{first_name}}"} —
+>Hey, <VariableNode>first_name</VariableNode> —
 >
->{"Congrats on the recent raise {% if {{investor_name}} %} ({{investor_name}} also funded a previous company of mine, was generally helpful. endif %}."}
+>Congrats on the recent raise <IfNode></IfNode> investor_list contains "YC" THEN (<VariableNode>investor_name</VariableNode> also funded a previous company of mine, was generally helpful. ELSE ENDIF
 >
->Happy to see that {"{{company_name}}"} looks a bit different from all the generic/gimmicky {"{{startup_category}}"} startups out there.
+>Happy to see that <VariableNode>company_name</VariableNode> looks a bit different from all the generic/gimmicky <VariableNode>startup_category</VariableNode> startups out there.
 >
 >Looked at your job board and noticed you're hiring for sales. Imagine you're planning to use outbound to gain significant early/high ROI traction?
 >
