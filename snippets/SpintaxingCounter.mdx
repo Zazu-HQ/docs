@@ -1,0 +1,55 @@
+export const SpintaxingCounter = ({ count }) => {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        height: "20px",
+        padding: "4px 4px 4px 6px",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "2px",
+        borderRadius: "5px",
+        background: "var(--background-bg-dim-hover, #E3E3E3)",
+        "@media (color-gamut: p3)": {
+          background: "var(--background-bg-dim-hover, color(display-p3 0.8902 0.8902 0.8902))"
+        },
+        color: "#1A1A1A",
+        fontFamily: "Geist",
+        fontSize: "11px",
+        fontStyle: "normal",
+        fontWeight: 500,
+        lineHeight: "16px",
+        verticalAlign: "middle",
+        position: "relative",
+        zIndex: 1
+      }}
+    >
+      {count}
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="12" 
+        height="12" 
+        viewBox="0 0 12 12" 
+        fill="none"
+        style={{
+          display: "inline",
+          verticalAlign: "middle",
+          marginLeft: "2px"
+        }}
+      >
+        <path 
+          fillRule="evenodd" 
+          clipRule="evenodd" 
+          d="M8.98024 4.34809C8.78592 4.1519 8.46934 4.15038 8.27314 4.34471L6 6.5962L3.72686 4.34471C3.53066 4.15038 3.21408 4.1519 3.01976 4.34809C2.82543 4.54429 2.82695 4.86087 3.02314 5.05519L5.64814 7.65519C5.84301 7.8482 6.15699 7.8482 6.35186 7.65519L8.97686 5.05519C9.17305 4.86087 9.17457 4.54429 8.98024 4.34809Z" 
+          fill="#AAAAAA" 
+          style={{
+            fill: "var(--icon-secondary, #AAAAAA)",
+            "@media (color-gamut: p3)": {
+              fill: "var(--icon-secondary, color(display-p3 0.6667 0.6667 0.6667))"
+            }
+          }}
+        />
+      </svg>
+    </span>
+  );
+} 

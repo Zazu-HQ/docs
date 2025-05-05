@@ -1,0 +1,28 @@
+export const SpintaxingGrey = ({ children }) => {
+  return (
+    <span
+      style={{
+        display: "inline-flex",
+        height: "20px",
+        padding: "0px 6px",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "4px",
+        borderRadius: "5px",
+        background: "var(--background-bg-dim, #F1F1F1)",
+        "@media (color-gamut: p3)": {
+          background: "var(--background-bg-dim, color(display-p3 0.9451 0.9451 0.9451))"
+        },
+        color: "#007EFF",
+        fontFamily: "Geist",
+        fontSize: "13px",
+        fontStyle: "normal",
+        fontWeight: 400,
+        lineHeight: "18px",
+        verticalAlign: "middle",
+      }}
+    >
+      {children}
+    </span>
+  );
+} 

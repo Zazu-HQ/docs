@@ -10,6 +10,8 @@ import { Comparison } from '/snippets/Comparison.mdx'
 import { ThenNode } from '/snippets/ThenNode.mdx'
 import { ElseNode } from '/snippets/ElseNode.mdx'
 import { EndifNode } from '/snippets/EndifNode.mdx'
+import { SpintaxingGrey } from '/snippets/SpintaxingGrey.mdx'
+import { SpintaxingCounter } from '/snippets/SpintaxingCounter.mdx'
 
 <img
   className=""
@@ -262,4 +264,34 @@ There is a unique twist when you’re sending with AI at scale:
 
 ESPs, like Google, don’t like seeing the exact same email being sent to 100s or 1000s of individual people. There are very few real-life situations where that happens—so if it’s the main kind of activity coming from your domain, you’ll raise red flags.
 
-This is where you’ll want to do something called **spintaxing**: randomly changing words in every email so they aren’t identical. Spintaxing works by finding synonyms to specific words or phrases in your email, then providing a few options for your email sequencer to randomly choose when it sends the email. For example, a spintaxed version of an intro line might look like this:
+This is where you’ll want to do something called **word shuffling**: randomly changing words in every email so they aren’t identical. Word shuffling works by finding synonyms to specific words or phrases in your email, then providing a few options for your email sequencer to randomly choose when it sends the email. For example, a shuffled version of an intro line might look like this:
+
+<SpintaxingGrey>Hey|Hi|Hello</SpintaxingGrey> <VariableNode>first_name</VariableNode>, I <SpintaxingGrey>noticed|saw|realized</SpintaxingGrey> you raised a <SpintaxingGrey>couple months ago|little while back</SpintaxingGrey>.
+
+Simple enough, and any email sequencer built for outbound at scale (like Za-zu) will either automatically do this or at least make it possible to spintax with some tinkering.
+
+<img
+  className=""
+  src="/images/word-shuffling.png"
+  alt=""
+/>
+
+The one failure mode to watch out for when word shuffling is choosing alternative words that make the email worse—something that I’ve seen happen on occasion.
+
+Just because a word is a synonym doesn’t mean it’s an equally valuable replacement in the email, so evaluate every spintaxed variable as rigorously as you would if you were evaluating your draft of a cold email. Only include spintaxed variables that are just as good as the original.
+
+### Optimizing based on data
+
+Your email sequencer, if it is good, should give you in-depth data on the performance of your campaigns. At the minimum you should have metrics like open rate and reply rate across both stages and individual emails. And hopefully your sequencer gives you data on what kinds of replies you’re getting—a good sequencer should be able to automatically classify replies into Positive and Negative categories, with more specific subcategories falling under each of those.
+
+Most of what to do with this data is obvious—take learnings and implement them for future campaigns. If you outlined your campaign in the way I suggested earlier in this section, you’ll have an easier time identifying why certain emails and stages do better than others.
+
+If it quickly becomes obvious, and by this I mean statistically significant, that one email (or series of emails) in your campaign is outperforming all the others, there are a couple of things you can do:
+
+1. Reroute all sending in the campaign to just the highest-performing series of emails.
+2. Pause new sending for the campaign and write a new one with more variations in the direction of the messaging that worked best in your first campaign.
+
+This is a tactic commonly used by copywriters (including by Rajiv and the team at Product Hunt when giving advice on taglines). Write dozens of different angles, focus on the ones that work, then write more variants in the same direction of your best angles. It’s good advice for copywriting and equally good advice for sending effective outbound.
+
+Before long you should be sending effective, powerful, ultra-optimized campaigns. And booking as many meetings as your sales team can handle.
+
