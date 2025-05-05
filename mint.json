@@ -44,33 +44,7 @@
     "name": "Dashboard",
     "url": "https://app.za-zu.com"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    },
-    {
-      "name": "Documentation",
-      "url": "https://za-zu.com/docs"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://za-zu.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "discord",
-      "url": "https://discord.gg/bCFBxjXtGs"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://za-zu.com/blog"
-    }
-  ],
+
   "navigation": [
     {
       "group": "The Cold Outbound Handbook",
@@ -82,36 +56,11 @@
         "personalizing-at-scale",
         "launching"
       ]
-    },
-    {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
     }
   ],
   "footerSocials": {
     "x": "https://x.com/zazugtm",
-    "github": "https://github.com/zazugtm",
-    "linkedin": "https://www.linkedin.com/company/za-zu"
+    "linkedin": "https://www.linkedin.com/company/za-zu",
+    "discord": "https://discord.gg/bCFBxjXtGs"
   }
 }
