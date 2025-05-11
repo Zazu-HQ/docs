@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      {
+        "source": "/handbook",
+        "destination": "docs.za-zu.com/docs"
+      },
+      {
+        "source": "/docs/:match*",
+        "destination": "docs.za-zu.com/docs/:match*"
+      }
+    ]
+  }
