@@ -2,11 +2,11 @@
     "rewrites": [
       {
         "source": "/handbook",
-        "destination": "docs.za-zu.com/docs"
+        "destination": "https://[subdomain].mintlify.dev/docs"
       },
       {
-        "source": "/docs/:match*",
-        "destination": "docs.za-zu.com/docs/:match*"
+        "source": "/handbook/:match*",
+        "destination": "https://[subdomain].mintlify.dev/docs/:match*"
       }
     ]
   }
