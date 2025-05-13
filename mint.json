@@ -1,5 +1,5 @@
 {
-  "name": "Za-zu API Documentation",
+  "name": "The Cold Outbound Handbook | Za-zu",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
@@ -49,12 +49,12 @@
     {
       "group": "The Cold Outbound Handbook",
       "pages": [
-        "intro",
-        "why-cold-outbound-works",
-        "the-infrastructure",
-        "writing-great-emails",
-        "personalizing-at-scale",
-        "launching"
+        "/handbook/intro",
+        "/handbook/why-cold-outbound-works",
+        "/handbook/the-infrastructure",
+        "/handbook/writing-great-emails",
+        "/handbook/personalizing-at-scale",
+        "/handbook/launching"
       ]
     }
   ],
