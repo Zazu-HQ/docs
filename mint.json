@@ -56,6 +56,12 @@
         "/handbook/personalizing-at-scale",
         "/handbook/launching"
       ]
+    },
+    {
+      "group": "Other Writing",
+      "pages": [
+        "/handbook/domain-set-up"
+      ]
     }
   ],
   "footerSocials": {

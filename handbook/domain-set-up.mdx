@@ -1,0 +1,138 @@
+---
+title: "How To Set Up Your Domains for Cold Outbound (SPF, DKIM, DMARC)"
+sidebarTitle: "Domain Set Up"
+---
+
+import Newsletter from '/snippets/newsletter.mdx'
+
+
+There are three clear places you have leverage over your deliverability:
+
+1. **At the domain level**
+2. **At the email inbox level**
+3. **At the email level** (specifically, what you write in your emails)
+
+This guide focuses on the first thing you should do—setting up your domains for deliverability.
+
+You can complete every step in this guide in less than an hour. If you have multiple domains (which you should if you're planning to send outbound at scale), allot ~20 minutes for each. You'll get fast.
+
+Setting up your domain for deliverability means taking care of three separate tasks:
+
+- **SPF**
+- **DKIM**
+- **DMARC**
+
+Here's how to do each.
+
+---
+
+## Setting up SPF
+
+**SPF** stands for *Sender Policy Framework*. It designates which mail servers are permitted to send emails from your domain. It's why you can't spoof your email to send from `tim@apple.com`—you aren't permitted to send from that email and domain.
+
+Good news: SPF takes just a couple minutes to set up.
+
+All of the next steps happen from your DNS settings. You'll find these wherever you purchased your domain (for example, if you bought your domain from GoDaddy, go to their website to find the DNS settings for your domain).
+
+**1. Identify your mail servers.**
+
+List all the servers and services that send emails on behalf of your domain. This includes your own mail servers, third-party email services (like Google Workspace, Office 365), and any other services (like marketing or support ticket platforms).
+
+**2. Create your SPF record.**
+
+Add a TXT record in your DNS.
+
+- In the **Name/Host/Destination** field, enter `@` or leave it blank (depending on the DNS provider).
+- In the **Value/Answer/Destination** field, enter your SPF record.
+
+A basic SPF record looks like this:
+
+```txt
+v=spf1 ip4:192.168.0.1 -all
+```
+
+**What does this mean?**
+
+- `v=spf1` indicates the version of SPF used.
+- `ip4:192.168.0.1` specifies an IP address that's authorized to send emails. Replace it with your server's IP address. For multiple servers, add them with a space delimiter.
+- Include third-party servers using mechanisms like `include:spf.provider.com`
+- `-all` indicates a hard fail for servers not listed on the record. You can use `~all` for a soft fail as a safer option during initial setup.
+
+**3. Validate that the SPF record is set up correctly** using [Fraudmarc's SPF lookup](https://fraudmarc.com/tools/spf/lookup).
+
+**4. Monitor and adjust.**
+
+If you add a new mail service and don't add it to your SPF, its emails will be blocked. You'll be able to see this in your DMARC report (more on that below). If you add new email services or change IP addresses, update your SPF record accordingly.
+
+---
+
+## Setting up DKIM
+
+**DKIM** stands for *DomainKeys Identified Mail*. It's a type of authentication that confirms your email hasn't been altered between your desk and hitting your recipient's inbox.
+
+Like SPF, setting up DKIM is simple. Just follow these steps:
+
+**1. Generate a DKIM key pair.**
+
+- Use a DKIM generator tool (there are plenty online) to create a public/private key pair. Your email service provider may offer this tool or service.
+- The private key will be used by your sending mail server to sign outgoing emails.
+- The public key will be published in your DNS records for recipient servers to verify the signature.
+
+**2. Add a DKIM record in your DNS settings.**
+
+- Add a new TXT record for DKIM.
+- The **Name/Host/Alias** field should be something like `selector._domainkey` where `selector` is a unique name for this particular DKIM record.
+- The **Value/Answer/Destination** field will hold your public key. The format generally looks like this:
+
+```txt
+v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4G... (your public key)
+```
+
+**3. Configure your email server.**
+
+Update your email server or service settings to sign outgoing emails with the private DKIM key. For most hosted services, this is done through the admin panel.
+
+**4. Verify the DKIM record.**
+
+Once your DKIM record is published, verify it using DKIM record checking tools like [MXToolbox](https://mxtoolbox.com/dkim.aspx) to ensure it's valid and correctly formatted.
+
+---
+
+## Setting up DMARC
+
+**DMARC** stands for *Domain-Based Message Authentication, Reporting, and Conformance*.
+
+This helps email receivers understand what to do with emails based on SPF and DKIM checks. Without DMARC, email service providers are not sure how you want them to handle SPF or DKIM fails from your domain.
+
+DMARC will run a series of checks when an email is received, and will either do nothing, quarantine the email, or reject the email.
+
+**1. Add a TXT record in your DNS.**
+
+- In the **Name/Host/Alias** field, enter `_dmarc`. Your domain will be automatically appended in most cases.
+- In the **Value/Answer/Destination** field, create your DMARC record. It typically looks like this:
+
+```txt
+v=DMARC1; p=none; rua=mailto:youremail@yourdomain.com
+```
+
+- `v=DMARC1` specifies the DMARC version
+- `p=none` sets the policy. Other options are `quarantine` or `reject`. Start with `none` for monitoring purposes and move to a stricter policy as you gain confidence in your SPF and DKIM records.
+- `rua` is where aggregate reports are sent. Replace `youremail@yourdomain.com` with either your actual email or a Postmark DMARC monitoring email. We recommend the latter because DMARC reports are quite technical, and Postmark does a great job translating things.
+
+**2. Validate the DMARC record is set up correctly** using [Fraudmarc's DMARC lookup](https://fraudmarc.com/tools/dmarc/lookup).
+
+---
+
+Repeat this process for every domain you plan on sending emails from. We recommend you buy multiple domains no matter how many emails you are sending—but it becomes a necessity if you plan to send at any real volume (more than 50 to 100 emails a day).
+
+You can learn more about why that is, along with everything else you need to build successful outbound campaigns at scale, in our handbook.
+
+Before you send cold emails, you first need to get the technical pieces out of the way. All the work you've done, or will do, on your campaigns is pointless if your emails are just going to hit someone's spam folder.
+
+---
+
+If you'd like more cold outbound ideas like this...
+
+Drop your email in the box below and we'll send you an email when we post something new. No spam, just tactics to help you send more effective outbound.
+
+<Newsletter />
