@@ -24,8 +24,6 @@ Setting up your domain for deliverability means taking care of three separate ta
 
 Here's how to do each.
 
----
-
 ## Setting up SPF
 
 **SPF** stands for *Sender Policy Framework*. It designates which mail servers are permitted to send emails from your domain. It's why you can't spoof your email to send from `tim@apple.com`—you aren't permitted to send from that email and domain.
@@ -64,8 +62,6 @@ v=spf1 ip4:192.168.0.1 -all
 
 If you add a new mail service and don't add it to your SPF, its emails will be blocked. You'll be able to see this in your DMARC report (more on that below). If you add new email services or change IP addresses, update your SPF record accordingly.
 
----
-
 ## Setting up DKIM
 
 **DKIM** stands for *DomainKeys Identified Mail*. It's a type of authentication that confirms your email hasn't been altered between your desk and hitting your recipient's inbox.
@@ -96,8 +92,6 @@ Update your email server or service settings to sign outgoing emails with the pr
 
 Once your DKIM record is published, verify it using DKIM record checking tools like [MXToolbox](https://mxtoolbox.com/dkim.aspx) to ensure it's valid and correctly formatted.
 
----
-
 ## Setting up DMARC
 
 **DMARC** stands for *Domain-Based Message Authentication, Reporting, and Conformance*.
@@ -121,15 +115,11 @@ v=DMARC1; p=none; rua=mailto:youremail@yourdomain.com
 
 **2. Validate the DMARC record is set up correctly** using [Fraudmarc's DMARC lookup](https://fraudmarc.com/tools/dmarc/lookup).
 
----
-
 Repeat this process for every domain you plan on sending emails from. We recommend you buy multiple domains no matter how many emails you are sending—but it becomes a necessity if you plan to send at any real volume (more than 50 to 100 emails a day).
 
 You can learn more about why that is, along with everything else you need to build successful outbound campaigns at scale, in our handbook.
 
 Before you send cold emails, you first need to get the technical pieces out of the way. All the work you've done, or will do, on your campaigns is pointless if your emails are just going to hit someone's spam folder.
-
----
 
 If you'd like more cold outbound ideas like this...
 
