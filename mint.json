@@ -60,7 +60,8 @@
     {
       "group": "Other Writing",
       "pages": [
-        "/handbook/domain-set-up"
+        "/handbook/choosing-domains",
+        "/handbook/domain-setup"
       ]
     }
   ],
