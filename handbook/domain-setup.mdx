@@ -56,7 +56,7 @@ v=spf1 ip4:192.168.0.1 -all
 - Include third-party servers using mechanisms like `include:spf.provider.com`
 - `-all` indicates a hard fail for servers not listed on the record. You can use `~all` for a soft fail as a safer option during initial setup.
 
-**3. Validate that the SPF record is set up correctly** using [Fraudmarc's SPF lookup](https://fraudmarc.com/tools/spf/lookup).
+**3. Validate that the SPF record is set up correctly** using [Fraudmarc's SPF lookup](https://fraudmarc.com/spf-record-check).
 
 **4. Monitor and adjust.**
 
@@ -90,7 +90,7 @@ Update your email server or service settings to sign outgoing emails with the pr
 
 **4. Verify the DKIM record.**
 
-Once your DKIM record is published, verify it using DKIM record checking tools like [MXToolbox](https://mxtoolbox.com/dkim.aspx) to ensure it's valid and correctly formatted.
+Once your DKIM record is published, verify it using DKIM record checking tools like [MXToolbox](https://mxtoolbox.com) to ensure it's valid and correctly formatted.
 
 ## Setting up DMARC
 
@@ -113,7 +113,7 @@ v=DMARC1; p=none; rua=mailto:youremail@yourdomain.com
 - `p=none` sets the policy. Other options are `quarantine` or `reject`. Start with `none` for monitoring purposes and move to a stricter policy as you gain confidence in your SPF and DKIM records.
 - `rua` is where aggregate reports are sent. Replace `youremail@yourdomain.com` with either your actual email or a Postmark DMARC monitoring email. We recommend the latter because DMARC reports are quite technical, and Postmark does a great job translating things.
 
-**2. Validate the DMARC record is set up correctly** using [Fraudmarc's DMARC lookup](https://fraudmarc.com/tools/dmarc/lookup).
+**2. Validate the DMARC record is set up correctly** using [Fraudmarc's DMARC lookup](https://fraudmarc.com/dmarc-check).
 
 Repeat this process for every domain you plan on sending emails from. We recommend you buy multiple domains no matter how many emails you are sending—but it becomes a necessity if you plan to send at any real volume (more than 50 to 100 emails a day).
 
