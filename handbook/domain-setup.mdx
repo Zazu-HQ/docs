@@ -5,7 +5,6 @@ sidebarTitle: "Domain Setup"
 
 import Newsletter from '/snippets/newsletter.mdx'
 
-
 There are three clear places you have leverage over your deliverability:
 
 1. **At the domain level**
@@ -26,7 +25,7 @@ Here's how to do each.
 
 ## Setting up SPF
 
-**SPF** stands for *Sender Policy Framework*. It designates which mail servers are permitted to send emails from your domain. It's why you can't spoof your email to send from `tim@apple.com`—you aren't permitted to send from that email and domain.
+**SPF** stands for _Sender Policy Framework_. It designates which mail servers are permitted to send emails from your domain. It's why you can't spoof your email to send from `tim@apple.com`—you aren't permitted to send from that email and domain.
 
 Good news: SPF takes just a couple minutes to set up.
 
@@ -64,7 +63,7 @@ If you add a new mail service and don't add it to your SPF, its emails will be b
 
 ## Setting up DKIM
 
-**DKIM** stands for *DomainKeys Identified Mail*. It's a type of authentication that confirms your email hasn't been altered between your desk and hitting your recipient's inbox.
+**DKIM** stands for _DomainKeys Identified Mail_. It's a type of authentication that confirms your email hasn't been altered between your desk and hitting your recipient's inbox.
 
 Like SPF, setting up DKIM is simple. Just follow these steps:
 
@@ -94,7 +93,7 @@ Once your DKIM record is published, verify it using DKIM record checking tools l
 
 ## Setting up DMARC
 
-**DMARC** stands for *Domain-Based Message Authentication, Reporting, and Conformance*.
+**DMARC** stands for _Domain-Based Message Authentication, Reporting, and Conformance_.
 
 This helps email receivers understand what to do with emails based on SPF and DKIM checks. Without DMARC, email service providers are not sure how you want them to handle SPF or DKIM fails from your domain.
 
