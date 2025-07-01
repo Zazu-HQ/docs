@@ -60,9 +60,18 @@
     {
       "group": "Other Writing",
       "pages": [
+        "/handbook/open-tracking-is-broken",
         "/handbook/choosing-domains",
         "/handbook/domain-setup",
         "/handbook/cold-email-and-spam"
+      ]
+    },
+    {
+      "group": "Great Cold Emails",
+      "pages": [
+        "/handbook/great-cold-emails-snapchat",
+        "/handbook/great-cold-emails-calacanis",
+        "/handbook/great-cold-emails-gates"
       ]
     }
   ],
