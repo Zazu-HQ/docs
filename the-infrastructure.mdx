@@ -7,7 +7,7 @@ import Newsletter from '/snippets/newsletter.mdx'
 
 <img
   className=""
-  src="/handbook/images/under-contruction.webp"
+  src="/images/under-contruction.webp"
   alt=""
 />
 
@@ -45,7 +45,7 @@ It’s tempting. If you decide to forego everything on this page and get straigh
 
 <img
   className=""
-  src="/handbook/images/one-to-many.png"
+  src="/images/one-to-many.png"
   alt="one email account sending to a huge number of people"
 />
 
@@ -79,7 +79,7 @@ And so on.
 
 Why not just any domain? Because all the recipients of your emails will see your domain name in your sender email address, and there will be a lot of eyebrow-raising if you picked something that seems suspicious (e.g. buying floridapanthershockey.com if your business is gardeningtools.com).
 
-<Tip>Use .com domains. Everything else (.io, .net, etc.) typically sees lower deliverability rates and trust scores. For more on picking the best domains for cold email, [read here](/handbook/choosing-domains).</Tip>
+<Tip>Use .com domains. Everything else (.io, .net, etc.) typically sees lower deliverability rates and trust scores. For more on picking the best domains for cold email, [read here](/choosing-domains).</Tip>
 
 Once you buy the domains, you should 301 redirect them to your main domain. For example, if I bought withaurora.com, I’d redirect it to helloaurora.com. You do this so that if someone who sees your email decides to copy and paste your domain into their browser (this is common), they hit your real website. You’d be surprised by how few people are surprised when domains redirect this way, or even notice it. It’s less of a problem than you probably think.
 
@@ -108,7 +108,7 @@ Handling deliverability at the domain level is mostly about boosting your authen
 - **DMARC**
 - **DKIM**
 
-These three acronyms, while they look rather scary, are easy to set up and provide some of the basic foundations for work we'll do later. [Here is how to set up each.](/handbook/domain-set-up)
+These three acronyms, while they look rather scary, are easy to set up and provide some of the basic foundations for work we'll do later. [Here is how to set up each.](/domain-set-up)
 
 <Info>You may have also heard of the concept of ‘domain warming’, which refers to increasing your domain’s reputation in the eyes of ESPs. This is not something you really have to do on its own. Warming up your domain is mostly a downstream effect of 1. The authentication steps in this section, 2. The inbox warming in the next section, and 3. The actual performance (and non-spamminess) of your emails and campaigns, which we’ll cover later on.</Info>
 
@@ -181,7 +181,7 @@ Your activity ends up looking like this as a result:
 
 <img
   className=""
-  src="/handbook/images/what-esps-want-to-see.png"
+  src="/images/what-esps-want-to-see.png"
   alt="Two side-by-side diagrams compare how email activity is perceived. On the left: “What ESPs want to see” shows one email going to one person—simple, human behavior. On the right: “What your emails probably look like” shows one email sent to many prospects at once, in a spammy, automated-looking pattern. This illustrates why sending mass outbound emails too quickly triggers spam filters.
 "
 />
@@ -215,7 +215,7 @@ Find a tool that can do all of these things for you. At Za-zu, for example, we u
 
 <Note>The rest of this warming section will range from “interesting” to “extremely useful” based on how you’re warming your emails. If you’re using a tool like Za-zu that effectively does everything for you, the following is good to know but not directly actionable—we’ll handle it. If you’re using a warming tool that requires more manual work (or you’re attempting to do this yourself) then the following includes information directly applicable to what you’re working on right now. </Note>
 
-If you aren’t interested in learning more of the workings of email warming, [skip to the next section](/handbook/writing-great-emails) where we cover evidence-backed methods for writing a great cold email.
+If you aren’t interested in learning more of the workings of email warming, [skip to the next section](/writing-great-emails) where we cover evidence-backed methods for writing a great cold email.
 
 #### Email warming best practices (before you start sending outbound)
 The most intensive part of warming comes before you’ve sent anything. You want to go from “here’s this person who just opened an account” to “this is a trusted sender who sends good emails to other trusted senders”. Each ESP has their own profile on you, so it’s in this initial warming phase that you’ll want to build a good reputation with at least Google and Microsoft.
