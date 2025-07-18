@@ -52,6 +52,11 @@
           {
             "group": "Scaling",
             "pages": [
+            ]
+          },
+          {
+            "group": "Opinions",
+            "pages": [
               "cold-email-and-spam"
             ]
           }
