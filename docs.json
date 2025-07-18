@@ -9,9 +9,10 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "The Cold Outbound Handbook",
+        "tab": "The Cold Outbound Handbook",
+        "icon": "book-open",
         "pages": [
           "intro",
           "why-cold-outbound-works",
@@ -22,20 +23,38 @@
         ]
       },
       {
-        "group": "Other Writing",
+        "tab": "How to Get Out of Spam",
+        "icon": "book-open",
         "pages": [
-          "open-tracking-is-broken",
-          "choosing-domains",
-          "domain-setup",
-          "cold-email-and-spam"
+          "how-to-get-out-of-spam"
         ]
       },
       {
-        "group": "Great Cold Emails",
-        "pages": [
-          "great-cold-emails-snapchat",
-          "great-cold-emails-calacanis",
-          "great-cold-emails-gates"
+        "tab": "Dive Deeper",
+        "icon": "lightbulb",
+        "groups": [
+          {
+            "group": "Deliverability",
+            "pages": [
+              "open-tracking-is-broken",
+              "choosing-domains",
+              "domain-setup"
+            ]
+          },
+          {
+            "group": "Writing",
+            "pages": [
+              "great-cold-emails-snapchat",
+              "great-cold-emails-calacanis",
+              "great-cold-emails-gates"
+            ]
+          },
+          {
+            "group": "Scaling",
+            "pages": [
+              "cold-email-and-spam"
+            ]
+          }
         ]
       }
     ]
