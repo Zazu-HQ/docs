@@ -1,0 +1,75 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Za-zu | Send More Effective Cold Email",
+  "colors": {
+    "primary": "#085ED6",
+    "light": "#5DE708",
+    "dark": "#085ED6"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "The Cold Outbound Handbook",
+        "pages": [
+          "intro",
+          "why-cold-outbound-works",
+          "the-infrastructure",
+          "writing-great-emails",
+          "personalizing-at-scale",
+          "launching"
+        ]
+      },
+      {
+        "group": "Other Writing",
+        "pages": [
+          "open-tracking-is-broken",
+          "choosing-domains",
+          "domain-setup",
+          "cold-email-and-spam"
+        ]
+      },
+      {
+        "group": "Great Cold Emails",
+        "pages": [
+          "great-cold-emails-snapchat",
+          "great-cold-emails-calacanis",
+          "great-cold-emails-gates"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:hi@za-zu.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "za-zu.com",
+      "href": "https://za-zu.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/zazugtm",
+      "linkedin": "https://www.linkedin.com/company/za-zu",
+      "discord": "https://discord.gg/bCFBxjXtGs"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude"
+    ]
+  }
+}
