@@ -95,5 +95,10 @@
       "chatgpt",
       "claude"
     ]
+  },
+  "seo": {
+    "metatags": {
+      "og:image": "/images/opengraph-image.png"
+    }
   }
 }
