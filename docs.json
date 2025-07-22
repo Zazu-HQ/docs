@@ -11,27 +11,24 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Blog Home",
-        "icon": "book-open",
+        "tab": "Blog",
         "pages": [
           "home"
         ]
       },
       {
         "tab": "The Cold Outbound Handbook",
-        "icon": "book-open",
         "pages": [
-          "intro",
-          "why-cold-outbound-works",
-          "the-infrastructure",
-          "writing-great-emails",
-          "personalizing-at-scale",
-          "launching"
+          "/handbook/intro",
+          "/handbook/why-cold-outbound-works",
+          "/handbook/the-infrastructure",
+          "/handbook/writing-great-emails",
+          "/handbook/personalizing-at-scale",
+          "/handbook/launching"
         ]
       },
       {
         "tab": "How to Get Out of Spam",
-        "icon": "book-open",
         "pages": [
           "how-to-get-out-of-spam"
         ]
