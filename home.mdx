@@ -10,25 +10,29 @@ Most outbound falls flat because of avoidable mistakes. Everything we write is d
 
 <Newsletter />
 
- <Card title="The Cold Email Handbook" img="/images/handbook.jpg" href="/handbook" arrow="true">
-    The viral, behemoth guide praised as “the best writing in modern cold outbound.” Go from zero to sending successful cold email campaigns at scale. 
-  </Card>
+<div className="flex flex-row gap-2 pt-4">
+  <div className="flex-1">
+    <div className="text-center font-geist text-[14px] font-semibold leading-[14px] tracking-[-0.14px] text-[#085ED6]">Start here</div>
+    <Card title="The Cold Email Handbook" img="/images/handbook.jpg" href="/handbook" arrow="true">
+      The viral, behemoth guide praised as “the best writing in modern cold outbound.” Go from zero to sending successful cold email campaigns at scale. 
+    </Card>
+  </div>
+  <div className="flex-1">
+    <Columns cols={1}>
+      <div className="text-center font-geist text-[14px] font-semibold leading-[14px] tracking-[-0.14px] text-[#085ED6]">Dive deeper</div>
+      <Card title="Writing" href="/great-cold-emails-snapchat" arrow="true">
+        Learn how to write effective cold emails to any audience.
+      </Card>
+      <Card title="Infrastructure" href="/handbook/the-infrastructure" arrow="true">
+        Learn how to set up inboxes, warm them, and get started sending.
+      </Card>
+      <Card title="Scaling" href="/handbook/personalizing-at-scale" arrow="true">
+        Learn how to scale personalized cold email with AI.
+      </Card>
+    </Columns>
+  </div>
+</div>
 
-<Columns col={2}>
-  <Card title="Writing" img="/images/writing-ghibli.png" href="/great-cold-emails-snapchat" arrow="true">
-Learn how to write effective cold emails to any audience.
-  </Card>
-
-       <Card title="Infrastructure" img="/images/infra-ghibli.png" href="/handbook/the-infrastructure" arrow="true">
-Learn how to set up inboxes, warm them, and get started sending.
-  </Card>
-
-  <Card title="Scaling" href="/handbook/personalizing-at-scale" arrow="true" img="/images/scaling-ghibli.png">
-Learn how to scale personalized cold email with AI.
-  </Card>
-
-     <Card title="How to Get Out of Spam — The Guide" img="/images/out-of-spam.png" href="/how-to-get-out-of-spam">
-And how to prevent getting there in the first place.
-  </Card>
-  </Columns>
-
+<Card title="How to Get Out of Spam — The Guide" img="/images/out-of-spam.png" href="/how-to-get-out-of-spam">
+  And how to prevent getting there in the first place.
+</Card>
