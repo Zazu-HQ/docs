@@ -11,6 +11,13 @@
   "navigation": {
     "tabs": [
       {
+        "tab": "Blog",
+        "icon": "book-open",
+        "pages": [
+          "home"
+        ]
+      },
+      {
         "tab": "The Cold Outbound Handbook",
         "icon": "book-open",
         "pages": [
@@ -69,12 +76,6 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@za-zu.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "za-zu.com",
