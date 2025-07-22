@@ -2,13 +2,12 @@
 title: "How to Get Your Cold Emails Out of Spam — The Guide"
 description: "And how to prevent getting there in the first place."
 sidebarTitle: "The Guide"
-'og:image': "/images/out-of-spam.png"
-'og:title': "How to Get Your Cold Emails Out of Spam — The Guide"
-
+og:image: "/images/out-of-spam.png"
+og:title: "How to Get Your Cold Emails Out of Spam — The Guide"
 ---
 
 <img
-  className=""
+  className={true}
   src="/images/out-of-spam.png"
   alt="An image of a person at his desk fighting spam filters.'"
 />
@@ -19,9 +18,9 @@ Spam is a big challenge in cold outbound for two reasons: getting sent to spam i
 
 This guide will help you with both of those things. You’ll learn how to prevent landing in spam and how to avoid getting there in the first place. The information here is based on real experience earned by sending millions of emails with my agency, [Aurora](https://helloaurora.com), and from building [Za-zu](https://www.za-zu.com), a cold email sequencer.
 
-**How does hitting spam happen in the first place?** A friend came to me recently with a familiar story. His startup had been sending a modest amount of cold outbound for a while. Some of it was working. Lately, though, performance was dipping. Their emails were landing in spam. 
+**How does hitting spam happen in the first place?** A friend came to me recently with a familiar story. His startup had been sending a modest amount of cold outbound for a while. Some of it was working. Lately, though, performance was dipping. Their emails were landing in spam.
 
-And it wasn’t just their cold outbound that was landing in spam. It was _all_ of their emails. Emails to customers weren’t getting read. Investors were texting to ask why updates were landing in the spam folder. Even internal emails—between team members!—were getting whisked away.
+And it wasn’t just their cold outbound that was landing in spam. It was _all_ of their emails. Emails to customers weren’t getting read. Investors were texting to ask why updates were landing in the spam folder. Even internal emails—between team members\!—were getting whisked away.
 
 Landing in spam folders ultimately means that:
 
@@ -80,19 +79,19 @@ All of the things in this section are things that you should do if you care abou
 
 ### Best practices for your infrastructure
 
-**Warm email accounts properly.** 
+**Warm email accounts properly.**
 
-There’s this view in outbound that warming is a one-and-done thing—just something you pay for at the beginning so that your emails hit Primary inboxes. That’s incorrect. The point of warming is to give your email account the activity metrics that a normal email account would have, which means that warming for 3 weeks and then sending cold outbound is a disaster (since your metrics tank without explanation). Proper warming is more gradual; you still want to be sending warming emails when you’re sending outbound. If performance dips, you should increase the warming and decrease the outbound. 
+There’s this view in outbound that warming is a one-and-done thing—just something you pay for at the beginning so that your emails hit Primary inboxes. That’s incorrect. The point of warming is to give your email account the activity metrics that a normal email account would have, which means that warming for 3 weeks and then sending cold outbound is a disaster (since your metrics tank without explanation). Proper warming is more gradual; you still want to be sending warming emails when you’re sending outbound. If performance dips, you should increase the warming and decrease the outbound.
 
 This can be complex to do on your own but happens automatically when you send with [Za-zu](https://www.za-zu.com).
 
 **Maintain warmed accounts and domains that you do not actively use.**
 
-Many of the world’s best cold email agencies, like Aurora, have a 1:1 ratio of accounts they are sending from: accounts they are not sending from. This sounds like a lot—why have email accounts you aren’t using? The reason is that you need to be able to swap these accounts in for the current sending accounts if they dip in performance. 
+Many of the world’s best cold email agencies, like Aurora, have a 1:1 ratio of accounts they are sending from: accounts they are not sending from. This sounds like a lot—why have email accounts you aren’t using? The reason is that you need to be able to swap these accounts in for the current sending accounts if they dip in performance.
 
-**Intelligently rotate and optimize inboxes.** 
+**Intelligently rotate and optimize inboxes.**
 
-It can help you to think of outbound like you are playing a sports management game. 
+It can help you to think of outbound like you are playing a sports management game.
 
 - You have all of these players. A roster.
 - But they can get injured. They can get tired.
@@ -109,28 +108,27 @@ If an inbox (or an entire domain) performs too poorly, you can swap it out entir
 
 It’s true that, while this sounds great, actually doing it can be complex. We’ve spent the last few months working on the perfect solution over at Za-zu. I don’t believe there is one comprehensive guide that can show you exactly how to do this, but if you want to build the fix manually, you’re welcome to try. Otherwise, use a tool like Za-zu that will automate it.
 
+**Validate email lists to check whether emails will bounce.**
+
+One way you can send a major red flag to ESPs is by sending a lot of emails that bounce (in other words, that don’t reach an inbox). Anything above 3% is a major signal for spam. So, before you send out emails to a big list, verify which emails aren’t valid (i.e. bounce) and purge them from your list. There are hundreds of cheap tools that can help with this.
+
 **Improve your targeting.**
 
-There’s often a temptation to cast the widest net possible. More emails sent means more revenue, right? While it can sometimes work, broadening your targeting also means increasing the likelihood that you are emailing people who do not care about your product. These people may mark your emails as spam. 
+There’s often a temptation to cast the widest net possible. More emails sent means more revenue, right? While it can sometimes work, broadening your targeting also means increasing the likelihood that you are emailing people who do not care about your product. These people may mark your emails as spam.
 
 Broad campaigns can be a lose-lose: people who were never going to buy your product anyway mark your emails as spam, which hurts your deliverability when you send quality campaigns to the right people.
 
 ### Best practices for your emails
 
-In the first section of this guide, we covered quick fixes to keep your emails out of spam (e.g. not including images, links, or attachments). But that only solves the technical reasons your emails may hit spam. There’s another thing that may land you in spam: **recipients marking your emails as spam.** 
+In the first section of this guide, we covered quick fixes to keep your emails out of spam (e.g. not including images, links, or attachments). But that only solves the technical reasons your emails may hit spam. There’s another thing that may land you in spam: **recipients marking your emails as spam.**
 
 This section is all about how to improve your emails so that the recipients who get them don’t mark them as spam. Part of the solution is better targeting—don’t cast such a wide net. But there are plenty of things you can do to increase the chance that your emails themselves are actually valuable.
 
 - **Don’t use a fancy HTML signature.** Many of the HTML signatures I see include images, links, and weird fonts—all things that can get you caught for spam. If you do want to use a signature, make it plaintext.
-
 - **Use a real profile picture.** This helps your emails feel more human and less spammy.
-
 - **Email from a real persona who has a real LinkedIn account (or online profile).** Don’t make up a fake persona to send emails from—that’s one of the clearest markers for spam. When I send cold email for Za-zu, I send as Matt Redler (myself). People can look me up online and see that I am a real person who would have a real reason for reaching out to them.
-
 - **Stop sending to personal emails.** Personal emails have much tougher spam filters. And, because they are harder to guess and verify, they’re more likely to bounce. On a human level, it’s also more jarring to receive a sales email to your personal inbox than it is to receive one to your work inbox—more people will mark these emails as spam. Ideally, just send B2B to work emails.
-
 - **Include an easy way to unsubscribe.** It’s important you give people another path to get out of your outbound list without marking you as spam. You could add an unsubscribe link, but links can hurt deliverability. I prefer writing something like: “Just reply: unsubscribe if you don’t want to hear from me again” at the bottom of the email, right after the signature. This is effective both because you don’t have to send a link and because email replies count as positive engagement.
-
 - **Use word shuffling (i.e. spintaxing).** Word shuffling is when you automatically use synonyms for words and phases in your emails so that you aren’t sending 1,000s of the exact same email. For example, you might start Email A with “Hi,” Email B with “Hey,” and Email C with “Hello”. It sounds simple, but it can help deliverability. Doing this on your own can be complex but is solvable with some code. (Or you can use a sequencer that automates it, like [Za-zu](https://www.za-zu.com).)
 
 **Avoid red flags that make your emails feel 1:Many.** Read your emails before sending and ask: Does this sound like one human wrote it to another human? This is especially important if you’re using personalized variables, like from [Clay.com](https://clay.com), or if you are doing word shuffling—which you should probably do. Double-check that the outputs make sense.
@@ -144,4 +142,3 @@ This section is all about how to improve your emails so that the recipients who 
 There are a lot of steps in this guide. They take a lot of work. Fortunately, you can avoid them by sending your cold outbound via Za-zu. We handle all the technical work for you so you can simply connect as many inboxes as you’d like, write your emails, and start sending—at any scale.
 
 Za-zu is one inbox for effective cold email with maximum deliverability. [Sign up for free here](https://accounts.za-zu.com/sign-up).
-
