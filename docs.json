@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Blog",
+        "tab": "Blog Home",
         "icon": "book-open",
         "pages": [
           "home"
@@ -89,17 +89,14 @@
       "discord": "https://discord.gg/bCFBxjXtGs"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude"
-    ]
-  },
   "seo": {
     "metatags": {
       "og:image": "/images/opengraph-image.png"
     }
+  },
+  "background": {
+    "color" : {
+    "light": "#F6F7F7"
   }
+}
 }
