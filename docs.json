@@ -7,6 +7,13 @@
     "light": "#5DE708",
     "dark": "#085ED6"
   },
+  "fonts" : {
+"family" : "Geist"
+  },
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
