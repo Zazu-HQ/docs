@@ -52,7 +52,8 @@ What does this mean?
 
 <Note>Emails sent with Za-zu use your email provider (Gmail, Outlook, etc.) directly. So your SPF record only needs your provider. No extra IPs or domains.</Note>
 
-If you add another service that sends **on your behalf** (not through Gmail), like Mailgun or Postmark, then you’d update your SPF to include them:
+If you add another service that sends **on your behalf** (i.e. not through Gmail), like Mailgun or Postmark, then you’d update your SPF to include them:
+`v=spf1 include:_spf.google.com include:spf.mtasv.net include:mailgun.org ~all`
 
 **3. Validate that the SPF record is set up correctly** using [Fraudmarc's SPF lookup](https://fraudmarc.com/spf-record-check).
 
