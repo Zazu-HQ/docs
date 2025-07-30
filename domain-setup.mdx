@@ -42,18 +42,17 @@ Add a TXT record in your DNS.
 - In the **Name/Host/Destination** field, enter `@` or leave it blank (depending on the DNS provider).
 - In the **Value/Answer/Destination** field, enter your SPF record.
 
-A basic SPF record looks like this:
+A basic SPF record for **Google Workspace** looks like this:  
+`v=spf1 include:_spf.google.com ~all`
 
-```txt
-v=spf1 ip4:192.168.0.1 -all
-```
+What does this mean?
+- `v=spf1` indicates the SPF version  
+- `include:_spf.google.com` tells mail servers to trust email sent by Google  
+- `~all` means all other sources should soft-fail (flagged but not rejected)
 
-**What does this mean?**
+<Note>Emails sent with Za-zu use your email provider (Gmail, Outlook, etc.) directly. So your SPF record only needs your provider. No extra IPs or domains.</Note>
 
-- `v=spf1` indicates the version of SPF used.
-- `ip4:192.168.0.1` specifies an IP address that's authorized to send emails. Replace it with your server's IP address. For multiple servers, add them with a space delimiter.
-- Include third-party servers using mechanisms like `include:spf.provider.com`
-- `-all` indicates a hard fail for servers not listed on the record. You can use `~all` for a soft fail as a safer option during initial setup.
+If you add another service that sends **on your behalf** (not through Gmail), like Mailgun or Postmark, then you’d update your SPF to include them:
 
 **3. Validate that the SPF record is set up correctly** using [Fraudmarc's SPF lookup](https://fraudmarc.com/spf-record-check).
 
