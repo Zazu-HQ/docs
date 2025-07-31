@@ -95,5 +95,10 @@
     "color" : {
     "light": "#F6F7F7"
   }
+},
+"integrations" : {
+  "ga4": {
+    "measurementId": "G-RE9HKZ6TM1"
+  }
 }
 }
