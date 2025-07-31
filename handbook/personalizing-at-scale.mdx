@@ -266,14 +266,16 @@ ESPs, like Google, don’t like seeing the exact same email being sent to 100s o
 
 This is where you’ll want to do something called **word shuffling**: randomly changing words in every email so they aren’t identical. Word shuffling works by finding synonyms to specific words or phrases in your email, then providing a few options for your email sequencer to randomly choose when it sends the email. For example, a shuffled version of an intro line might look like this:
 
+
+
 <SpintaxingGrey>Hey|Hi|Hello</SpintaxingGrey> <VariableNode>first_name</VariableNode>, I <SpintaxingGrey>noticed|saw|realized</SpintaxingGrey> you raised a <SpintaxingGrey>couple months ago|little while back</SpintaxingGrey>.
 
 Simple enough, and any email sequencer built for outbound at scale (like Za-zu) will either automatically do this or at least make it possible to spintax with some tinkering.
 
 <img
   className=""
-  src="/images/word-shuffling.png"
-  alt=""
+  src="/images/word-shuffling.gif"
+  alt="Adding word shuffling alternatives to a greeting (Hey, Hi, Hello)"
 />
 
 The one failure mode to watch out for when word shuffling is choosing alternative words that make the email worse—something that I’ve seen happen on occasion.
