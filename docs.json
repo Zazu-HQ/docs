@@ -100,7 +100,7 @@
   "seo": {
     "metatags": {
       "og:type": "website",
-      "og:image": "/images/opengraph-image.png"
+      "og:image": "https://za-zu.com/docs/images/opengraph-image.png"
     }
   },
   "background": {
