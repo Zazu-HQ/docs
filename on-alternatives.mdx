@@ -26,7 +26,7 @@ Speaking of not becoming a deliverability expert—here's something that'll blow
 
 Za-zu does all this automatically. We monitor your email health in real-time and increase the warm-to-cold ratio whenever there's a dip. When an inbox gets beat up, we automatically pull it and swap in a fresh, warmed-up one from your reserve. No dashboards to check, no ratios to calculate, no custom automations to build. It just works.
 
-And here's where things get messy. To avoid sending identical emails (which kills deliverability), you need to create variations. But look at how SmartLead and Instantly make you do it: you have to manually write out word shuffling and conditional logic using Liquid syntax like `{hey|hi|hello}` and `{% if company_size > 100 %} 5-figures and up {% else %} way too much {% endif %}`.
+And here's where things get messy. To avoid sending identical emails (which kills deliverability), you need to create variations. But look at how SmartLead and Instantly make you do it: you have to manually write out word shuffling and conditional logic using Liquid syntax like <br/> `{hey|hi|hello}` and `{% if company_size > 100 %} 5-figures and up {% else %} way too much {% endif %}`.
 
 The result? Hard to read campaigns that look like this:
 
@@ -38,12 +38,22 @@ The result? Hard to read campaigns that look like this:
 
 This Liquid syntax approach creates campaigns that are hard to read, debug, and learn from. You're essentially writing code instead of focusing on your message.
 
-Za-zu takes a completely different approach. Instead of forcing you to learn a programming language, we give you simple, visual tools:
+Za-zu takes a completely different approach. Instead of forcing you to learn a programming language, we give you simple, visual tools.
+
+Here's what it looks like to build an <Tooltip tip="Say one thing if a conditional statement is true, and something else if it's false">if/then statement</Tooltip> in za-zu.
+
 
 <img
   className=""
   src="/images/conditional-formulas.png"
   alt="Za-zu visual conditional logic builder for cold email personalization - no-code alternative to Smartlead Instantly Liquid syntax programming making email campaigns easier to create and manage"
+/>
+
+And here's what it looks like to add <Tooltip tip="A smart way to automatically vary the wording in each email to maximize deliverability. Just add synonym alternatives inside your text, and Za-zu randomly picks a different one every time your message sends.">word shuffling</Tooltip> to a campaign in za-zu.
+<img
+  className=""
+  src="/images/word-shuffling.gif"
+  alt="Sending the exact same email hundreds (or thousands) of times triggers alarm bells for ESPs like Google. Fair enough, normal humans rarely type identical emails on repeat. Enter Word Shuffling: a smart way to automatically vary the wording in each email. Just add synonym alternatives inside your text, and Za-zu randomly picks a different one every time your message sends."
 />
 
 ## Why Za-zu is more powerful and easy to use
