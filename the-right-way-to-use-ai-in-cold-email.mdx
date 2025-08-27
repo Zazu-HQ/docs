@@ -1,0 +1,163 @@
+---
+title: "The right way to use AI in cold email"
+sidebarTitle: "AI in Email, The Right Way"
+"og:description": "AI is the most powerful tool you can use to send effective cold emails at scale. But there are a number of do’s and don’ts to consider."
+"og:title": "How to Use AI For Cold Email | A Detailed Guide"
+mode: "wide"
+---
+
+**Note for readers:** The title was a little extreme. There is no _one way_ to use AI in cold email. But, after sending 5M+ emails for our clients, and generating millions in pipeline, I’m convinced I have—at least—landed on a very effective way to do it.
+
+Let’s begin.
+
+If you spend any amount of time on the internet these days, you’ve seen it:
+
+- AI is taking over the world!
+- It’s taking all the jobs!
+- Sales and marketing pros must pay attention!
+
+Are these topics worth thinking about? Of course.
+
+However, most talking points on your feeds fail to explain how to implement AI to drive results. That’s the point of this post.
+
+In this post, we’ll cover:
+
+- 3 ways to use AI to make your cold email more effective, human, and personal
+- What AI is NOT able to do well (yet) - super important
+- Real examples and prompts I’ve used to book more meetings at [Aurora](https://helloaurora.com), my agency
+
+**The goal here is to show you how AI can help you drive more revenue, not replace your team.**
+
+What AI is NOT good at (yet)
+
+Let's level-set on capabilities first. Here is what AI is currently not very good at:
+- Running an entire cold outreach campaign from idea → research → writing → sending → optimizing → managing unsubscribes → measuring performance → improving
+- Listening to you explain your offer, then go generate millions in pipeline without any additional work
+- Replacing the creativity and empathy of an expert human marketer who understands your company and customers
+
+In other words, AI is not a panacea or magic bullet. Your job is to provide clear instructions so AI can generate useful output.
+
+**Think of AI as an effective intern**
+
+I like to think of AI as my trusty assistant or intern. It’s a generalist, not an expert. But it’s also a fast learner.
+
+My job is to train my assistant on exactly what type of output I expect, then empower it with the insights, expertise, and clear instructions for it to get sh*t done.
+
+## Write prompts with productive constraints
+
+To consistently get good outputs from AI tools (Claude, GPT-4, Bard, etc) **at scale** you need to guide its “thinking” and introduce tight creative constraints.
+
+Let me walk through a few real examples from my agency.
+
+**1. LinkedIn post summary**
+
+Here is the current version of our LinkedIn Post Summary GPT prompt at Aurora, which we run ONLY if the prospect has a recent enough post that meets our rules (100+ characters, not just a link).
+
+I'll show the full prompt to illustrate how intentional we have to be to avoid getting garbage outputs:
+
+>Read the input, which is a lead's recent LinkedIn post.<br/>
+><br/>
+>First, determine the point of view and subject matter. Then, deduce the focus. Based on that, complete this:<br/>
+><br/>
+>'Came across your post about...'<br/>
+><br/>
+>Which we use to start emails.<br/>
+><br/>
+>Requirements:<br/>
+>
+>- 10 words or less 
+>- Simple, casual language 
+>- Lowercase 
+>- No quotes 
+>- If too complex, output ""<br/>
+>- Output just the completion value
+
+Let's break down why this structure matters:
+
+- Giving context that input will be a LinkedIn post
+- Requiring the AI to think through the point of view and subject matter first. If we skip this, outputs can be ridiculous
+- Introducing creative constraints:
+  - 10 words or less
+  - Simple language
+  - Lowercase (so it can integrate into sentences easily)
+  - No quotes
+  - Output just the value to use in our emails, not the full sentence
+
+We also have to train the AI on a ton of examples of what good input and output look like.
+
+<Accordion title="Show example inputs and outputs for the AI">
+**Input**: We had a blast in Austin! Thank you for all the positive responses! We'll be in touch soon. 
+<br/>**Output**: enjoying your time in Austin
+
+**Input:** We're #hiring a new Senior Software Engineer in St Petersburg, Florida. Apply today or share this post with your network. 
+<br/>**Output**: hiring a senior software engineer in St. Pete
+
+**Input:** Registration is now live to attend the masterclass on cold outreach Alex Hormozi, Enzo Carasso, Nils E. Schneider, Raul Kaevand, and I put together. Link here to register: https://Inkd.in/ebbYw5Yf 
+We went over
+
+• The best outreach message Alex has ever gotten <br/>
+• How Al is changing the outbound landscape<br/>
+• And he roasted some of my copy Check it out!
+
+**Output:** registration for a masterclass on cold outreach
+</Accordion>
+
+By being crisp and intentional with our instructions and constraints, we're able to reliably generate a nice personalized start to emails from LinkedIn posts.
+
+And it prevents bad outputs from breaking things at scale when we blend this with the rest of our automation.
+
+**2. Normalizing company names**
+
+Here’s another example where we normalize company names with AI:
+
+Normalize the company name by focusing on its most distinctive and memorable element, as it may be reflected in the company's domain, and the company LinkedIn description.
+
+The goal is to identify the standout part of the name, typically the first noun, while discarding generic terms. Output a concise, casual abbreviation employees might use, respecting original capitalization and spacing.
+
+Example company normalizations: 
+- Amazon.com, Inc. → Amazon 
+- Tribe Capital → Tribe 
+- Walmart Inc. → Walmart 
+- Accenture → ACN 
+- JP Morgan Chase Bank → JPM
+
+This allows us to refer to companies like “JP Morgan Chase Bank” as just “JPM” in emails.
+
+Shorthand signals to prospects that we speak the same language. It’s like insider lingo and helps build rapport immediately.
+
+**3. Even richer personalization**
+
+We blend AI for personalization with the rest of our data-driven targeting.
+
+Here's an example reaching out to a startup raising a Series B that I created using ChatGPT and other automations:
+
+<img
+  className=""
+  src="/images/job-board-idea-email-example.png"
+  alt="AI cold email example with dynamic personalization variables - demonstrates how to customize outreach using job board data and company-specific pain points."
+/>
+
+I generated tight persona, job-to-be-done phrasing, and an idea for what open roles indicate fit.
+
+The AI creates highly relevant, personalized messaging tailored to each individual prospect.
+
+For example, if we were targeting Vanta we might say (real outputs):
+
+> Christina, hey - <br/><br/>
+>Saw the open BDR role. Sounds like you plan on outbound being a big part of the Series B climb.<br/><br/>
+>I have an idea to target compliance-driven CTOs. Right when they're stressing about navigating complex security compliance audits.<br/><br/>
+>Best way to do that is to mine job boards. You could look for roles that talk about:<br/>
+>- security frameworks implementation 
+>- audit preparation and compliance
+>- information security policy management 
+>
+>It's the perfect excuse to reach out- pitch being that we can help them automate all things compliance. <br/>
+>And it's even crazier when you run all this automatically. <br/>
+><br/>Sincerely, <br/>
+>Matt
+
+When you combine this level of personalization with a solid send strategy, response rates skyrocket.
+
+## Wrapping it all up
+
+Hopefully, this gives you a few ideas for how to leverage AI for better cold email results. The key is being intentional with your instructions and constraints to get good output.
