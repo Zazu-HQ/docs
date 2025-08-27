@@ -1,0 +1,170 @@
+---
+title: "The Practical Guide to Email Deliverability"
+sidebarTitle: "Practical Guide"
+"og:description": "Cold outbound doesn't work if your emails don't hit the right inboxes. This is a guide to setting up an effective deliverability system for your campaigns."
+mode: "wide"
+---
+
+"A-ha!" you think as, sitting in your home office or WeWork or local coffee shop, you put the finishing touches on the best cold email you've written in your life.
+
+Everything is perfect: the personalization is just right, subject line is sure to attract an open, and you're sure this prospect will be genuinely interested in what you're offering.
+
+What if I told you none of that really matters (yet)?
+
+Copy, subject lines, pitching… All of it is useless—completely, totally wasted—if your email does not hit your prospect's Primary inbox.
+
+# This is called email deliverability.
+
+Email deliverability doesn't answer the question, "Did the email get delivered?".
+
+Instead, it answers the question: "Did our email get delivered to the **right inbox**?"
+
+In most cases, the right inbox is the Primary inbox. Most major and minor Email Service Providers (Google, Outlook, and Yahoo being a few big ones) split emails up into a few different categories.
+
+If you have a Gmail account, the way your emails are organized may look like this:
+
+<img
+className=''
+src='/images/inbox-tabs.png'
+alt='The Google email category tabs (primary, promotions, social)'
+/>
+
+Most other ESPs follow suit—and most people never seriously check anything other than their primary inbox, especially for work-related matters. And then, of course, there's the spam folder—a place that nobody ever checks for any reason. If you are getting sent to spam, you can virtually guarantee nobody will see your emails.
+
+Bottom line is, if you are landing in anything other than a reader's primary inbox, you have work to do. (Many of our clients aren't aware of which inboxes they're landing in before we work with them. If you're unsure, I would recommend reading on). 
+
+## How do you actually hit Primary inboxes?
+
+Here is the principle that guides all email deliverability practice: **ESPs want your email to look like a natural, 1:1 email to a friend or a colleague.** They will not be happy if your email looks like a spammy promotion that you are sending to people en masse.
+
+<img
+  className=""
+  src="/images/what-esps-want-to-see.png"
+  alt="Two side-by-side diagrams compare how email activity is perceived. On the left: “What ESPs want to see” shows one email going to one person—simple, human behavior. On the right: “What your emails probably look like” shows one email sent to many prospects at once, in a spammy, automated-looking pattern. This illustrates why sending mass outbound emails too quickly triggers spam filters.
+"
+/>
+
+
+Good news? There is a way to replicate the 1:1 email format—personalized, not spammy, and not triggering red flags for ESPs—at massive scale for your cold outbound campaigns. The rest of this piece is dedicated to teaching you all I know, and all I've learned running an outbound agency, about making sure your emails end up where people will read them.
+
+## First, handle the technical stuff
+
+Before you read anything else in this guide, you first need to get the technical pieces out of the way. This is important, because implementing email and account-level deliverability practice is useless without a properly set up technical backend—it would be like trying to build a house without first laying the foundation.
+
+The technical work can be broken up into three main buckets:
+
+- SPF
+- DMARC
+- DKIM
+
+Setting these up will boost your authenticity in the eyes of ESPs. A good example is that, if you tried to spoof the 'From' field in your emails to send from tim@apple.com, you couldn't. This is because Apple has their authentication properly set up. And this kind of authentication is a positive signal for email providers, because it signals higher-trust for domains (in other words, spammers cannot spoof the apple.com domain, so the domain is higher-trust).
+
+Here are a few more details on each:
+
+**SPF (Sender Policy Framework)**: This designated which mail servers are permitted to send emails from your domain. SPF is why you can't spoof your email to send from tim@apple.com—because you are not permitted to send from that email and domain. Setting up SPF records takes only a few minutes, and can be done in your DNS settings.
+
+**DMARC (Domain-Based Message Authentication, Reporting, and Conformance)**: This helps email receivers understand what to do with emails based on SPF and DKIM checks. DMARC will run a series of checks when an email is received, and will either do nothing, quarantine the email, or reject the email. 
+
+**DKIM**: This is a type of authentication that confirms your email hasn't been altered between leaving your desk and hitting your receivers' inbox. 
+
+Setting all of these up should take no longer than 30 minutes. I'd recommend looking at tutorials from your email provider or DNS provider—they should give you custom instructions for properly setting all of these up. 
+
+Once the technical work is done, you can start getting into what I'd consider the fun part.
+
+## Tactics to increase your email deliverability
+
+ESPs want to prevent spam. So they have an incentive to prevent mass cold email from hitting people's Primary inbox. To evaluate whether or not they think an email is spam, an ESP looks at two separate things:
+
+1. The reputation of the individual sender (tim@apple.com, for example)
+
+2. The reputation of the domain (apple.com, for example)
+
+3. The content of the email
+
+Below, I’ll cover 1) account-level guidelines, 2) domain-level guidelines, and 3) email-level guidelines.
+
+## How to optimize deliverability at the account level
+
+For an account (and a domain! this section is not exclusive) to be recognized as credible, it needs to have normal, human-like patterns of engagement. The best way to get human-like patterns of engagement for a new account is to do something called [email warming](/handbook/the-infrastructure#warming-your-email-inboxes).
+
+Email warming works like this:
+- You email thousands of separate email accounts on different domains.
+- All of these email accounts have human-like conversations with each other (maybe using AI) to engage and signal to ESPs that these accounts are credible.
+
+In other words, email warming simulates real human email interaction on an automated scale in order to make your account look credible to ESPs—without hundreds of hours of manual labor.
+
+**One big mistake**: Many companies hear they need email warming and run towards one of the 1,000s of companies online offering “email warming services”. Usually, these companies pay an email warming service to warm their accounts and domains, but it poses a problem:
+- The email warming service is sending emails from one IP address.
+- The company that sends outbound emails sends from a different IP address.
+
+This is fishy behavior, and signals to ESPs that not everything is aboveboard. My recommendation is that the same person or team who does your email warming should also be the one sending your cold outbound. That is how we run things for customers at [Za-zu](https://za-zu.com).
+
+Another important piece of account-level advice: **Don’t use more than 2 to 3 accounts per domain, and don’t send more than a human-level volume of email per account.**
+
+Sending hundreds of emails per account per day is a clear way to signal to ESPs that the account is being used for promotion (a normal human sends < 50 per day). And it’s best to only use a few accounts per domain.
+
+It is impossible to predict exactly when an account’s deliverability might stumble. For this reason, I recommend opening more accounts than you think you will need and keeping a certain number of non-email-sending accounts warmed up in reserve. Then, when an email goes down, you can simply swap in another one.
+
+## How to optimize deliverability at the domain level
+
+A while back, a client came to us with an outbound problem:
+- Their cold outbound wasn’t working (and emails were getting marked as spam)
+- Because they used their normal company domain for cold outbound, their normal emails to customers were getting sent to spam
+
+This is a huge problem. And, if they had continued down this route and Google had classified them as a spammer, they could have lost their Google Workspace accounts entirely. Which leads me to my most important insight about domains:
+
+### Never send cold outbound from your actual domain.
+
+Instead, you want to buy a collection of domains similar to your own that you can use exclusively for outbound. Mixing cold outbound and internal or customer emails is like dropping a touch-activated bomb into a field of sheep—if someone goes wrong with your outbound, that failure could bring all of your emails down with it.
+
+You should keep a close eye on each domain’s performance over time. If a particular domain ends up tanking in deliverability, stop sending outbound from that domain for a while, warm up the accounts in it, and try again. If that doesn’t work, swap it out permanently.
+
+## How to optimize deliverability at the email level
+
+So you’re ready to go on the account and domain levels. What about email?
+
+There are two email-specific buckets of optimization to do:
+- Making sure you are sending to valid emails
+- Making sure your emails themselves are not getting identified as spam
+
+### 1: Why is it important to send to valid emails? 
+
+Because, if you’re just emailing a huge list of contacts you don’t know, your bounce rate—the amount of emails that don't deliver because the account doesn’t exist—will be significantly higher than a real human emailing people they know.
+
+This makes high bounce rate a very easy way for ESPs to identify what they consider spammers.
+
+Verifying emails is also important because of “spam traps”. These are specific emails that are hidden within large email lead lists you may purchase online (as an example). If you email a spam trap email, you have probably just ruined deliverability for your domain.
+
+To solve this, you can either 1) use a tool online that can automatically verify emails (these tools can work, but aren’t always fully-reliable), or you can 2) pre-email every single account on your list from a throwaway account & domain you won’t use for outbound. This is slightly more tedious, but also more accurate.
+
+Once you’ve verified that the emails you plan to send to actually exist, you can start optimizing your emails for deliverability.
+
+2: How can you optimize your emails for deliverability?
+
+At my agency Aurora, we do a number of things to make sure emails feel like true 1:1 connections—not 1:Many spam. One tactic we use is called [word shuffling](/word-shuffling) (sometimes called [spintaxing](/word-shuffling)): you can think of this like a wardrobe change for emails. In other words, instead of sending the exact same email template to thousands of people, programmatically implement small wording changes.
+
+You could have Hey, Hi, and Hello as three salutation variations
+
+You could have Cheers, Best, and Regards as three goodbye variations
+
+You could have Saw, Noticed, and Discovered as three ways to precede the words “your company”.
+
+Soon, you will have thousands of unique email possibilities to send—without changing anything significant about your template. As for why this works, think about it: is any normal human being emailing friends and colleagues going to send the same email thousands of times? They aren’t, and ESPs know that. It’s best if you, too, can make your emails unique.
+
+Another recommendation of mine is to use plain-text emails. Most normal emails are simple plain text—as opposed to most marketing emails, which use HTML, links, and attachments.
+
+**One caveat**: At the beginning of campaigns, we will sometimes send emails in HTML to be able to track open rates for different subject lines. Once we’re confident we have found a subject line that works, though, we will switch to plain-text. This tends to improve open rates.
+
+Another way to optimize your emails for deliverability is simply to write emails that people want to read. The more useful and valuable your emails are, the more people will reply—and the fewer that will mark your emails as spam. 
+
+## The future of email deliverability
+
+Things are changing in email deliverability—in good and bad ways, if you send cold outbound.
+
+Google [recently announced](https://blog.google/products/gmail/gmail-security-authentication-spam-protection/) new Gmail protections for a “safer, less spammy inbox”. One reported requirement is that Google is requiring bulk senders to stay under a **0.3% spam rate threshold** to avoid being marked as spam.
+
+In other words, if you send emails to 1,000 people and just 3 of them mark your email as spam, you may be getting sent to spam for the remaining age of the universe.
+
+This is good if you know what you’re doing—most bulk senders don’t, which means that lots of your competition will start getting sent to spam. Meanwhile, you have the chance to be one of the few people that makes it to the primary inbox. 
+
+Email deliverability is one (complex) piece of the puzzle. Za-zu has every best practice baked right-in to give every cold email of yours the best chance of landing in the Primary inbox.

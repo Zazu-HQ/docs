@@ -50,7 +50,8 @@
               "open-tracking-is-broken",
               "choosing-domains",
               "domain-setup",
-              "word-shuffling"
+              "word-shuffling",
+              "practical-guide-to-email-deliverability"
             ]
           },
           {
@@ -59,6 +60,7 @@
               "great-cold-emails-snapchat",
               "great-cold-emails-calacanis",
               "great-cold-emails-gates",
+              "what-makes-a-good-cold-email",
               "real-connections",
               "more-examples"
             ]
@@ -66,6 +68,7 @@
           {
             "group": "Scaling",
             "pages": [
+              "the-modern-startup-sales-team"
             ]
           },
           {
