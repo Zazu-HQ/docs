@@ -45,16 +45,6 @@
         "icon": "lightbulb",
         "groups": [
           {
-            "group": "Deliverability",
-            "pages": [
-              "open-tracking-is-broken",
-              "choosing-domains",
-              "domain-setup",
-              "word-shuffling",
-              "practical-guide-to-email-deliverability"
-            ]
-          },
-          {
             "group": "Writing",
             "pages": [
               "the-right-way-to-use-ai-in-cold-email",
@@ -70,6 +60,16 @@
               "great-cold-emails-calacanis",
               "great-cold-emails-gates",
               "more-examples"
+            ]
+          },
+          {
+            "group": "Deliverability",
+            "pages": [
+              "practical-guide-to-email-deliverability",
+              "open-tracking-is-broken",
+              "choosing-domains",
+              "domain-setup",
+              "word-shuffling"
             ]
           },
           {
