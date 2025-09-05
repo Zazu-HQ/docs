@@ -123,5 +123,8 @@
   }
 },
 "integrations" : {
+  "gtm": {
+    "tagId": "GTM-TJSRXZ6K"
+  } 
 }
 }
