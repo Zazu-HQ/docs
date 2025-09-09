@@ -100,7 +100,7 @@
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "za-zu.com",
+      "label": "Send cold email with Za-zu",
       "href": "https://za-zu.com"
     }
   },
