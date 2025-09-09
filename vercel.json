@@ -1,4 +1,36 @@
 {
+    "redirects": [
+      {
+        "source": "/docs/handbook/intro",
+        "destination": "/docs/handbook/cold-email/intro",
+        "permanent": true
+      },
+      {
+        "source": "/docs/handbook/launching",
+        "destination": "/docs/handbook/cold-email/launching",
+        "permanent": true
+      },
+      {
+        "source": "/docs/handbook/personalizing-at-scale",
+        "destination": "/docs/handbook/cold-email/personalizing-at-scale",
+        "permanent": true
+      },
+      {
+        "source": "/docs/handbook/the-infrastructure",
+        "destination": "/docs/handbook/cold-email/the-infrastructure",
+        "permanent": true
+      },
+      {
+        "source": "/docs/handbook/why-cold-outbound-works",
+        "destination": "/docs/handbook/cold-email/why-cold-email-works",
+        "permanent": true
+      },
+      {
+        "source": "/docs/handbook/writing-great-emails",
+        "destination": "/docs/handbook/cold-email/writing-great-emails",
+        "permanent": true
+      }
+    ],
     "rewrites": [
       {
         "source": "/docs",

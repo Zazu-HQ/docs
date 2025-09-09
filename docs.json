@@ -26,12 +26,12 @@
       {
         "tab": "The Cold Email Handbook",
         "pages": [
-          "/handbook/intro",
-          "/handbook/why-cold-outbound-works",
-          "/handbook/the-infrastructure",
-          "/handbook/writing-great-emails",
-          "/handbook/personalizing-at-scale",
-          "/handbook/launching"
+          "/handbook/cold-email/intro",
+          "/handbook/cold-email/why-cold-email-works",
+          "/handbook/cold-email/the-infrastructure",
+          "/handbook/cold-email/writing-great-emails",
+          "/handbook/cold-email/personalizing-at-scale",
+          "/handbook/cold-email/launching"
         ]
       },
       {
