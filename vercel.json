@@ -1,6 +1,11 @@
 {
     "redirects": [
       {
+        "source": "/docs/handbook",
+        "destination": "/docs/handbook/cold-email/intro",
+        "permanent": true
+      },
+      {
         "source": "/docs/handbook/intro",
         "destination": "/docs/handbook/cold-email/intro",
         "permanent": true
