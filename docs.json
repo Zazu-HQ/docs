@@ -18,7 +18,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Blog",
+        "tab": "Home",
         "pages": [
           "home"
         ]
@@ -42,7 +42,6 @@
       },
       {
         "tab": "Dive Deeper",
-        "icon": "lightbulb",
         "groups": [
           {
             "group": "Writing",
