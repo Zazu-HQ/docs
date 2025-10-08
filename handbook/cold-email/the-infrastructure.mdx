@@ -68,32 +68,29 @@ Deliverability is also an issue at the email level—you can’t have spammy ema
 
 ## Buying domains and setting them up for deliverability
 
-In order to send at any reasonable scale, you need to buy what I call **adjacent domains**: domains that are similar to your company's. In the case of my company, Aurora, our actual domain is helloaurora.com—but adjacent domains might be:
+In order to send at any reasonable scale, you need to buy what I call **adjacent domains**: domains that are similar to your company's. In the case of my company, Za-zu, our actual domain is za-zu.com—but adjacent domains might be:
 
-auroraemails.com
-
-yesaurora.com
-
-withaurora.com
-
-getaurora.com
+- za-zuemails.com
+- yesza-zu.com
+- withza-zu.com
+- getza-zu.com
 
 And so on.
 
 Why not just any domain? Because all the recipients of your emails will see your domain name in your sender email address, and there will be a lot of eyebrow-raising if you picked something that seems suspicious (e.g. buying floridapanthershockey.com if your business is gardeningtools.com).
 
-<Tip>Use .com domains. Everything else (.io, .net, etc.) typically sees lower deliverability rates and trust scores. For more on picking the best domains for cold email, [read here](/choosing-domains).</Tip>
+<Tip>Use .com domains. Everything else (.io, .net, etc.) typically sees lower deliverability rates and trust scores. For more on [picking the best domains for cold email](/choosing-domains) &larr; read here.</Tip>
 
-Once you buy the domains, you should 301 redirect them to your main domain. For example, if I bought withaurora.com, I’d redirect it to helloaurora.com. You do this so that if someone who sees your email decides to copy and paste your domain into their browser (this is common), they hit your real website. You’d be surprised by how few people are surprised when domains redirect this way, or even notice it. It’s less of a problem than you probably think.
+Once you buy the domains, you should 301 redirect them to your main domain. For example, if I bought za-zuhq.com, I’d redirect it to za-zu.com. You do this so that if someone who sees your email decides to copy and paste your domain into their browser (this is common), they hit your real website. You’d be surprised by how few people are surprised when domains redirect this way, or even notice it. It’s less of a problem than you probably think.
 
 ### How many adjacent domains should you buy?
-The number of adjacent domains you should buy depends on how much email volume you want to send. At Aurora, we set up 3 inboxes per domain and send 20 cold emails per inbox per day, which is about what a normal human sales rep would send. If you already know how much outbound you want to send, you can use a simple formula:
+The number of adjacent domains you should buy depends on how much email volume you want to send. At Za-zu and Aurora, we set up 3 inboxes per domain and send 20 cold emails per inbox per day, which is about what a normal human sales rep would send. If you already know how much outbound you want to send, you can use a simple formula:
 
 <Note> Adjacent Domains = (Desired Daily Volume / 60) x 1.1 </Note>
 
 The “1.1” exists in the formula to make sure you buy some reserve domains; in other words, domains that you don’t strictly need and will not use immediately. These domains exist for those situations when some of the domains you are actively using in a campaign start to experience deliverability problems—which happens from time to time. We’ll cover this in more detail in the final section of this playbook about scaling your campaigns.
 
-If you want to send 60 or fewer emails per day, you may just need one domain to get started. If you want to send 6,000, you should buy 110 domains. This is not a hard rule, but it’s a good heuristic you can use to get started. Your experience while sending may vary, and you might change your mind down the road. But it has worked for us at Aurora.
+If you want to send 60 or fewer emails per day, you may just need one domain to get started. If you want to send 6,000, you should buy 110 domains. This is not a hard rule, but it’s a good heuristic you can use to get started. Your experience while sending may vary, and you might change your mind down the road. But it has worked for us.
 
 ***There is a separate question here:*** *How much daily volume will I send? We'll cover that later, when we talk about who to email and how many emails to send them. If you have a small TAM (imagine there are only 5,000 people who could be your customers), then you likely won't need many domains. But if there are tens or hundreds of thousands of people that you could possibly email, you'll need a lot. At Aurora, we buy ~20 domains for each client. What you should know for now is that it's better to buy too many domains than too few. Nothing will happen if you buy too many, but buying too few and over-sending on them could get you penalized for spam.*
 
@@ -107,11 +104,11 @@ There’s so much effort put into optimizing inboxes and emails for deliverabili
 
 Handling deliverability at the domain level is mostly about boosting your authenticity in the eyes of ESPs, like Gmail. Fortunately, this is fairly easy. Roll up your sleeves and you can get most of this done in an hour or so. At the domain level, you need to set up three main things:
 
-- **SPF**
-- **DMARC**
-- **DKIM**
+- <Tooltip tip ="SPF designates which mail servers are permitted to send emails from your domain. It’s why you can’t spoof your email to send from tim@apple.com—you aren’t permitted to send from that email and domain.">SPF</Tooltip>
+- <Tooltip tip="DKIM is a type of authentication that confirms your email hasn’t been altered between your desk and hitting your recipient’s inbox.">DKIM</Tooltip>
+- <Tooltip tip="DMARC helps email receivers understand what to do with emails based on SPF and DKIM checks. Without DMARC, email service providers are not sure how you want them to handle SPF or DKIM fails from your domain.">DMARC</Tooltip>
 
-These three acronyms, while they look rather scary, are easy to set up and provide some of the basic foundations for work we'll do later. [Here is how to set up each.](/domain-setup)
+These three acronyms, while they look rather scary, are easy to set up and provide some of the basic foundations for work we'll do later. [Here is how to set up each.](/domain-setup) *Or if you'd rather not deal with DNS records, [Za-zu](https://app.za-zu.com) can purchase domains and configure everything for you—included with your subscription.*
 
 <Info>You may have also heard of the concept of ‘domain warming’, which refers to increasing your domain’s reputation in the eyes of ESPs. This is not something you really have to do on its own. Warming up your domain is mostly a downstream effect of 1. The authentication steps in this section, 2. The inbox warming in the next section, and 3. The actual performance (and non-spamminess) of your emails and campaigns, which we’ll cover later on.</Info>
 
@@ -121,10 +118,10 @@ Inbox-level deliverability optimization is the highest-leverage deliverability w
 
 Sure, ESPs like Google care about your domain and the contents of your email. But what they care about most is the individual sender—are *you* a trustworthy person?
 
-As you might expect, this is also the trickiest part of deliverability optimization. But even though some of the next steps are tricky, they should take you no more than ~10 hours to implement, even if you have lots of email inboxes. It begins, of course, with actually setting up your email inboxes.
+As you might expect, this is also the trickiest part of deliverability optimization. But even though some of the next steps are tricky, they should take you no more than ~10 hours to implement, even if you have lots of email inboxes. It begins, of course, with actually setting up your email inboxes. *Or save the 10 hours—[Za-zu](https://app.za-zu.com) handles all of this for you.*
 
 ### Setting up your email inboxes
-At Aurora, we set up 3 inboxes per domain. You could set up more—it’s the temptation, because setting up lots of domains takes work—but we don’t do this at Aurora. That’s because the more you send from each domain, the more spam reports there are per domain. More spam reports on a domain increases the chance that the entire domain crosses a spam threshold and gets a bad reputation for being spammy. To reduce risk, diversify sending across more domains.
+At Za-zu and my agency Aurora, we set up 3 inboxes per domain. You could set up more—it’s the temptation, because setting up lots of domains takes work—but we don’t do this. That’s because the more you send from each domain, the more spam reports there are per domain. More spam reports on a domain increases the chance that the entire domain crosses a spam threshold and gets a bad reputation for being spammy. To reduce risk, diversify sending across more domains.
 
 You have 3 main options for setting up inboxes:
 
@@ -140,9 +137,9 @@ There are other options. But these are the main 3. And if you want to avoid head
 
 The practical step-by-step of setting up the inboxes is straightforward—we won't get into a step-by-step tutorial of that here, as there are plenty of good ones online ([like Google's own site](https://support.google.com/a/answer/6365252?product_name=UnuFlow&hl=en&visit_id=638579311059382104-2675909081&rd=1&src=supportwidget0&hl=en)). Or you could ask AI. What's important to mention here, however, is that you be careful about which IP addresses and browsers you are managing accounts from.
 
-ESPs, like Google, don’t want one person to be managing hundreds of email accounts. And if you simply open your browser and spend a few hours setting up hundreds of inboxes on many dozens of domains, ESPs will flag that and start to making things harder for you: they might ask you for a phone number, then limit how many times you can use that phone number. They may ask you to verify your identity with a text message. Or they may simply not let you continue to create inboxes and add accounts.
+ESPs, like Google, don’t want one person to be managing hundreds of email accounts. And if you simply open your browser and spend a few hours setting up hundreds of inboxes on many dozens of domains, ESPs will flag that and start to making things harder for you: they might ask you for a phone number, then limit how many times you can use that phone number. They may ask you to [verify your identity with a text message](/text-verification). Or they may simply not let you continue to create inboxes and add accounts.
 
-How do you get around this so you can set up as many accounts as you want? Two ways:
+How do you get around this so you can set up as many accounts as you want? Three ways:
 
 <Steps>
 <Step title="VPNs">
@@ -151,8 +148,12 @@ When you set up email accounts, use a VPN and change it regularly. Use high qual
 <Step title="Antidetect browsers">
 There are browsers, like [Adspower](https://adspower.com/) and [Wavebox](https://wavebox.io/), that take extra steps to conceal your fingerprint (digital identity) from websites. This makes it harder for Google to start placing limits on how many accounts you can manage from your browser.
 </Step>
+<Step title="Temporary phone numbers">
+Even with VPNs and antidetect browsers, Google may still detect what you're doing and require phone number verification for new accounts. The problem is that once you verify a phone number with Google, you can typically only use it a couple more times before they block it. This severely limits how many accounts you can create. The solution is to use a service like [TextVerified](https://textverified.com/) that lets you rent real phone numbers for just a single text verification. This way, each time Google asks for phone verification, you can use a fresh number and continue creating the additional Google accounts you need for your email infrastructure.
+</Step>
 </Steps>
 
+<Note>Look, this part is tedious. VPNs, antidetect browsers, temporary phone numbers—it's the kind of work that eats up hours and feels pretty far from actually reaching customers. If you'd rather skip it, [Za-zu](https://app.za-zu.com) handles all of this (buying domains, DNS setup, inbox creation, the whole thing) as part of your subscription. Or keep reading and we'll walk you through it.</Note>
 
 Use these. Then set up your inboxes with the names of real humans that work on your team. At Aurora, we found it’s usually most effective to use the names of the founders or other people that can open doors at the company (e.g. your Head of [Department] type roles). Prospects often respond better to this than getting an email from a low-level salesperson. It’s fine if the low-level salesperson is managing outbound on behalf of the founder, but I find it’s effective to use the name of people who are higher up. This isn’t one-size-fits-all advice, though—think about what makes sense for your company. And, yes, use profile pictures!
 
@@ -164,7 +165,7 @@ You could start sending outbound as soon as your inboxes are ready. But you shou
 
 Sending outbound en masse immediately may get you sent to spam.
 
-Instead, you should do something called 'warming.
+Instead, you should do something called 'warming'.
 
 *What warming means:* To warm email inboxes, you send emails from your accounts to other email accounts that agree to engage positively: opening emails, marking them as important, replying on occasion, and marking the emails as 'not spam' if they ever hit spam. The goal of warming is to create a profile of activity for your inboxes that matches what a normal good email inbox would look like. Think of a manager at a company whose emails are always opened, often replied to, and often marked as important—that's the activity we want.
 
