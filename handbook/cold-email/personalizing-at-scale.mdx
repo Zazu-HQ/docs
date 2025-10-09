@@ -181,8 +181,15 @@ LLMs like ChatGPT are extremely good word predictors. At a basic level, they loo
 
 Examples tend to work best when you give the AI both an input and an output. Show AI an example of the input they’ll receive, then show it an example of what a positive output would look like. Here’s an example for coming up with the niche of a business:
 
-- Input: "Neighbor revolutionizes storage by linking people with extra space to those needing storage, offering a cost-effective alternative to traditional self-storage. Homeowners earn additional income by renting out spaces like garages or basements, while renters enjoy flexible, affordable options. With demand for storage at an all-time high, Neighbor provides a secure, trustworthy platform that cuts storage costs by half, challenging conventional storage norms and empowering hosts."
-- Output: "peer-to-peer storage"
+<AccordionGroup>
+  <Accordion title="Input (a company description)">
+    Neighbor revolutionizes storage by linking people with extra space to those needing storage, offering a cost-effective alternative to traditional self-storage. Homeowners earn additional income by renting out spaces like garages or basements, while renters enjoy flexible, affordable options. With demand for storage at an all-time high, Neighbor provides a secure, trustworthy platform that cuts storage costs by half, challenging conventional storage norms and empowering hosts.
+  </Accordion>
+
+  <Accordion title="Output (expected description of niche)">
+    peer-to-peer storage
+  </Accordion>
+</AccordionGroup>
 
 If you can give more than one good example, do so—it would be difficult to give too many examples. Feel free to test as you’d like, but in my experience you will see diminishing returns as you add additional examples. The difference between 0 and 1 example, or 1 and 3 examples, can be serious. But the difference between 50 and 52 examples is not likely to be noticeable.
 
@@ -226,8 +233,8 @@ Your email sequencer should give you in-depth data about each stage and email, s
 ### What about timing?
 It’s up to you to decide how many days should pass between each email, but we often do something like this:
 
-- Between Stage 1 and 2: **2 days**
-- Between Stage 2 and 3: **4 days**
+- Between Stage 1 and 2: **3 days**
+- Between Stage 2 and 3: **7 days**
 - Between Stage 3 and 4: **7 days**
 
 The logic here is simple: if someone doesn’t reply to a couple of emails within the matter of a couple of days, they likely aren’t interested right now, were too busy to reply, or didn’t see the email. In any case, there isn’t much benefit to flooding their inbox—let it rest a week or so, then follow up. If after your third (or fourth, or fifth) email you still haven’t heard back, let it rest even longer and try once more. Often, by the final stage, you’re just letting the prospect know you won’t be emailing them any more in the future.
@@ -272,7 +279,7 @@ This is where you’ll want to do something called **[word shuffling](/word-shuf
 
 <SpintaxingGrey>Hey|Hi|Hello</SpintaxingGrey> <VariableNode>first_name</VariableNode>, I <SpintaxingGrey>noticed|saw|realized</SpintaxingGrey> you raised a <SpintaxingGrey>couple months ago|little while back</SpintaxingGrey>.
 
-Simple enough, and any email sequencer built for outbound at scale (like Za-zu) will either automatically do this or at least make it possible to spintax with some tinkering.
+Simple enough, and any email sequencer built for outbound at scale (like Za-zu) will either automatically do this or at least make it possible to shuffle words with some tinkering.
 
 <img
   className=""
@@ -295,7 +302,7 @@ If it quickly becomes obvious, and by this I mean statistically significant, tha
 1. Reroute all sending in the campaign to just the highest-performing series of emails.
 2. Pause new sending for the campaign and write a new one with more variations in the direction of the messaging that worked best in your first campaign.
 
-This is a tactic commonly used by copywriters (including by Rajiv and the team at Product Hunt when giving advice on taglines). Write dozens of different angles, focus on the ones that work, then write more variants in the same direction of your best angles. It’s good advice for copywriting and equally good advice for sending effective outbound.
+This is a tactic commonly used by copywriters. Write dozens of different angles, focus on the ones that work, then write more variants in the same direction of your best angles. It’s good advice for copywriting and equally good advice for sending effective outbound.
 
 Before long you should be sending effective, powerful, ultra-optimized campaigns. And booking as many meetings as your sales team can handle.
 
