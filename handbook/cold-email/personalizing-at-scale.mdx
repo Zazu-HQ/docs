@@ -38,7 +38,7 @@ Recent developments in AI, however, make it finally possible to do prospect rese
 
 It's at this stage you will want to consider how you will want to send your emails, personalize them with AI, and monitor your campaigns. The rest of this chapter will assume that you have a way to do so. There are a number of email sequencers out there today that you can use, most of which will require varying degrees of tinkering to get them to work in a useful way.
 
-Or you could try the product I have been building over the last year: Za-zu. It's the email sequencer built for personalized outbound at scale, and it can do everything from warming your accounts to implementing all of the smart AI tactics we'll discuss below. [See the product here](https://za-zu.com).
+Or you could try the product I have been building over the last year: Za-zu. It's the email sequencer built for personalized outbound at scale, and it can do everything from warming your accounts to implementing all of the smart AI tactics we'll discuss below. [See the product here](https://app.za-zu.com).
 
 Enough self-promotion—let's talk tactics.
 
@@ -60,17 +60,17 @@ Imagine that I'm running a campaign to sell Za-zu to companies who raised in the
 Here's a completely hypothetical 1:1 email I could write to you.
 
 >Hey, Reader —
->
+><br/>
 >Congrats on the recent raise (Lachy Groom also funded a previous company of mine, was generally helpful).
->
+><br/>
 >Happy to see that Hypothetical Company looks a bit different from all the generic/gimmicky AI support startups out there.
->
+><br/>
 >Looked at your job board and noticed you're hiring for sales. Imagine you're planning to use outbound to gain significant early/high ROI traction?
->
-> If so - you should check out Za-zu, my company. It's an email sequencer that lets one smart growth person send personalized outbound at the scale of 50 SDRs.
->
+><br/>
+> If so - you should check out Za-zu, my company. It's an email sequencer that handles deliverability automatically. Most cold emails vanish into spam. We make sure yours land in Primary.
+><br/>
 >I'd love to show you the product. Would it be crazy to chat this week?
->
+><br/>
 >Matt
 
 This is the kind of email that previously would have been impossible to automate at scale. Now it's possible, and here's how you might go about doing it.
@@ -79,28 +79,28 @@ This is the kind of email that previously would have been impossible to automate
 Now I want to take that email and replicate it at scale with AI. Here's how I'd go about doing it.
 
 >Hey, <VariableNode>first_name</VariableNode> —
->
->Congrats on the recent raise <IfNode></IfNode><VariableSelect>investor_list</VariableSelect><Comparison>contains</Comparison><Comparison>YC</Comparison><ThenNode></ThenNode> (YC also funded a previous company of mine, was generally helpful. <ElseNode></ElseNode><EndifNode></EndifNode>
->
+><br/>
+>Congrats on the recent raise <IfNode></IfNode><VariableSelect>investor_list</VariableSelect><Comparison>contains</Comparison><Comparison>YC</Comparison><ThenNode></ThenNode> (YC also funded a previous company of mine, was generally helpful.) <ElseNode></ElseNode><EndifNode></EndifNode>
+><br/>
 >Happy to see that <VariableNode>company_name</VariableNode> looks a bit different from all the generic/gimmicky <VariableNode>startup_category</VariableNode> startups out there.
->
+><br/>
 >Looked at your job board and noticed you're hiring for sales. Imagine you're planning to use outbound to gain significant early/high ROI traction?
->
->If so - you should check out Za-zu, my company. It's an email sequencer that lets one smart growth person send personalized outbound at the scale of 50 SDRs.
->
+><br/>
+>If so - you should check out Za-zu, my company. It's an email sequencer that handles deliverability automatically. Most cold emails vanish into spam. We make sure yours land in Primary.
+><br/>
 >I'd love to show you the product. Would it be crazy to chat this week?
->
+><br/>
 >Matt
 
 There are various levels of complexity at work in this email—let's look at each.
 
 - **Campaign level**: The email is personalized by default based on how we've chosen who to email (companies that have recently raised and have open sales jobs). That means some of the template is still personalized, even though AI isn't touching it.
 
-- **Copy and paste**: The {"{{first_name}}"} variable in this email is the simplest one—you just need the AI to paste the name of the prospect.
+- **Copy and paste**: The <VariableNode>first_name</VariableNode> variable in this email is the simplest one—you just need to paste the name of the prospect.
 
-- **Summarization and normalization**: The {"{{company_name}}"} {"{{startup_category}}"} variables go beyond the simple copy and paste. The company name, for example, needs to be normalized—if a company's name is Hypothetical Company Industries, Inc., pasting that entire thing in an email will feel inhuman. So the AI shortens it to 'Hypothetical Company'. And {"{{startup_category}}"} needs to be a human-sounding summary of the specific niche or industry that the prospect's company is in.
+- **Summarization and normalization**: The <VariableNode>company_name</VariableNode> and <VariableNode>startup_category</VariableNode> variables go beyond the simple copy and paste. The company name, for example, needs to be normalized—if a company's name is 'Hypothetical Company Industries, Inc.', pasting that entire thing in an email will feel inhuman. So we want AI to shorten it to 'Hypothetical Company' or even just 'Hypothetical' if that's what people would casually call them. And <VariableNode>startup_category</VariableNode> needs to be a human-sounding summary of the specific niche or industry that the prospect's company is in.
 
-- **If-then:** The investor line at the beginning of the email feels tricky, but it isn't. You just need to ask AI to cross-reference the list of the prospect's investors with your own lists of previous investors (relevant in this case, since I have them). If there's an investor in common, the line will be included—if not, it will be cut.
+- **If-then:** The investor line at the beginning of the email feels tricky, but it isn't. You just need to ask Za-zu to cross-reference the list of the prospect's investors with your own lists of previous investors (relevant in this case, since I have them). If there's an investor in common, the line will be included—if not, it will be cut.
 
 AI personalization can, of course, go as far as you want it to. It can write entire sentences or paragraphs based on the instructions you give it. At Aurora, for example, one campaign for a podcasting agency that found success included a bullet-point section where AI offered personalized podcast ideas for the prospects. Always write your dream email first, then figure out how to replicate that email with AI at scale second.
 
