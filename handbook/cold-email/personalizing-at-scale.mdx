@@ -102,7 +102,7 @@ There are various levels of complexity at work in this email—let's look at eac
 
 - **If-then:** The investor line at the beginning of the email feels tricky, but it isn't. You just need to ask Za-zu to cross-reference the list of the prospect's investors with your own lists of previous investors (relevant in this case, since I have them). If there's an investor in common, the line will be included—if not, it will be cut.
 
-AI personalization can, of course, go as far as you want it to. It can write entire sentences or paragraphs based on the instructions you give it. At Aurora, for example, one campaign for a podcasting agency that found success included a bullet-point section where AI offered personalized podcast ideas for the prospects. Always write your dream email first, then figure out how to replicate that email with AI at scale second.
+AI personalization can, of course, go as far as you want it to. It can write entire sentences or paragraphs based on the instructions you give it. We'll talk through how to do this kind of thing in the next section. At Aurora, for example, one campaign for a podcasting agency that found success included a bullet-point section where AI offered personalized podcast ideas for the prospects. Always write your dream email first, then figure out how to replicate that email with AI at scale second.
 
 You can get carried away here, of course. The more complexity you give AI, and the more words it has to write, the higher the probability that you will plant a red flag—that the email will have a non-human smell to it. Be careful about how you use AI and test it before launching a campaign.
 
@@ -141,22 +141,25 @@ The AI prompt instructions format we have found most effective is as follows:
 
 You don’t have to do these things in this order, but having all of these elements in your instructions generally leads to the right outcomes. Here are example instructions for generating podcast ideas.
 
->Imagine you're the CMO at <VariableNode>company_name</VariableNode>. Your task is to succinctly fill in the blankin the sentence 'I thought a show about _ could be impactful' with an idea for what their podcast show could be about. The show should aim to get the company "out there" and help them grow. Let the company description be your guide.
->
->The company description: <VariableNode>company_description</VariableNode>
->
->Your output should be just the part that NATURALLY fills in the blank, not the whole sentence. With your output, I should be able to craft a sentence that's strategic yet straightforward.
->
->Choose only key terms that are essential for identification, ensuring your outputintegrates smoothly into the template sentence without grammatical adjustments. Aim for a natural, conversational tone. If the idea requires a preposition or article for a more fluent fit, include it. The goal is to create an output that can be directly inserted into the sentence, maintaining clarity and simplicity.
->
->Keep it brief: 1-5 words, no more. Aim for punchy and to-the-point.
->Maintain a casual yet polished tone, like you're brainstorming in a relaxed, high-level meeting.
-> Prioritize lowercase usage, even for typically capitalized terms. Abbreviate where it makes sense and enhances clarity.
-> Steer clear of complex jargon; opt for simplicity and impact.
->
->Format your response in JSON with the key 'show_idea', including only the segment that fills in the blank. leave out sentence-ending punctuation.
->
-> If helpful, use keywords in the description not normally found in other companies. Do NOT include quotation marks in the output.
+>Imagine you're the CMO at <VariableNode>company_name</VariableNode>. Your task is to succinctly fill in the blank in the sentence 'I thought a show about ______ could be impactful' with an idea for what their podcast show could be about.<br/>
+> The show should aim to get the company "out there" and help them grow. Let the company description be your guide.
+><br/>
+>The company description: "<VariableNode>company_description</VariableNode>"
+><br/>
+
+<Tip>When I'm writing an AI prompt, I use what I call the *Three C's*: Context, Creative, and Constraint. What you just read above was the *Context*. Now I'm moving into the *Creative Constraint*—telling it how to be creative and where the guardrails are.</Tip>
+
+>- Your output should be just the part that NATURALLY fills in the blank, not the whole sentence. In other words output only the segment that fills in the blank, nothing else.
+>- Choose only key terms that are essential for identification, ensuring your output integrates smoothly into the template sentence without grammatical adjustments. 
+>- Aim for a natural, conversational tone. If the idea requires a preposition or article for a more fluent fit, include it. The goal is to create an output that can be directly inserted into the sentence, maintaining clarity and simplicity.
+>- Keep it brief: 1-5 words, no more. Aim for punchy and to-the-point.<br/>
+>- Maintain a casual yet polished tone, like you're brainstorming in a relaxed, high-level meeting.<br/>
+> - Prioritize lowercase usage, even for typically capitalized terms. Abbreviate where it makes sense and enhances clarity.<br/>
+> - Steer clear of complex jargon; opt for simplicity and impact.<br/>
+>- Leave out sentence-ending punctuation in your output.
+>- If helpful, use keywords in the description not normally found in other companies. Do NOT include quotation marks in the output.
+
+<Tip> These creative constraints didn't come out of thin air—I built them iteratively. I started with a few basic rules, ran the prompt, then refined it based on what worked and what didn't. It takes some upfront work, but once you've dialed it in, you'll have a system that delivers what you want, every time.</Tip>
 
 ### Crafting the AI persona
 It’s sometimes helpful to create an AI persona to do one of two things:
