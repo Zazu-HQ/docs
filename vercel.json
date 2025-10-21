@@ -37,12 +37,12 @@
       },
       {
         "source": "/docs/writing-great-emails",
-        "destination": "/docs/handbook/cold-email/writing-great-emails",
+        "destination": "https://za-zu.mintlify.dev/docs/handbook/cold-email/writing-great-emails",
         "permanent": true
       },
       {
         "source": "/docs/personalizing-at-scale",
-        "destination": "/docs/handbook/cold-email/personalizing-at-scale",
+        "destination": "https://za-zu.mintlify.dev/docs/handbook/cold-email/personalizing-at-scale",
         "permanent": true
       }
     ],
